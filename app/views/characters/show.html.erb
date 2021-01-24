@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<% @character.images.each do |i| %>
+  <div class="side-by-side">
+    <%= image_tag i, class: "image-size" %>
+  </div>
+<% end %>
+
+<p>
+  <strong>Name ja:</strong>
+  <%= @character.name_ja %>
+</p>
+
+<p>
+  <strong>Name en:</strong>
+  <%= @character.name_en %>
+</p>
+
+<p>
+  <strong>Name gun:</strong>
+  <%= @character.name_gun %>
+</p>
+
+<p>
+  <strong>Gun category:</strong>
+  <%= @gun_category %>
+</p>
+
+<p>
+  <strong>Gun type:</strong>
+  <%= @character.gun_type_id %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @country %>
+</p>
+
+<p>
+  <strong>Motif:</strong>
+  <%= simple_format(h(@character.motif)) %>
+</p>
+
+<% @information.each do |i| %>
+  <% if @character.information.any? %>
+    <p>
+      <strong>Title:</strong>
+      <%= Title.find(i.title_id).name %>
+    </p>
+
+    <p>
+      <strong>Introduction:</strong>
+      <%= simple_format(h(i.introduction)) %>
+    </p>
+
+    <p>
+      <strong>Height:</strong>
+      <%= i.height %> cm
+    </p>
+
+    <p>
+      <strong>Hobby:</strong>
+      <%= i.hobby %>
+    </p>
+
+    <p>
+      <strong>Favorite:</strong>
+      <%= i.favorite %>
+    </p>
+  <% end %>
+<% end %>
+
+<%= link_to 'Edit', edit_character_path(@character) %> |
+<%= link_to 'Back', characters_path %>

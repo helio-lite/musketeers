@@ -1,0 +1,26 @@
+  <%= form.hidden_field :character_id, value: params[:id] %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.collection_radio_buttons :title_id, Title.all, :id, :name, form.object.title_id.blank? ? {checked: 1} : {checked: form.object.title_id} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :introduction %>
+    <%= form.text_area :introduction %>
+  </div>
+
+  <div class="field">
+    <%= form.label :height %>
+    <%= form.select :height, [*140..200] %> cm
+  </div>
+
+  <div class="field">
+    <%= form.label :hobby %>
+    <%= form.text_field :hobby %>
+  </div>
+
+  <div class="field">
+    <%= form.label :favorite %>
+    <%= form.text_field :favorite %>
+  </div>

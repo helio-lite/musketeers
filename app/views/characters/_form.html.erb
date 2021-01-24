@@ -1,0 +1,72 @@
+<%= form_with(model: character, local: true) do |form| %>
+  <% if character.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(character.errors.count, "error") %> prohibited this character from being saved:</h2>
+
+      <ul>
+      <% character.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :images %>
+      <% if form.object.images.present? %>
+      <%= "削除したい画像はチェックを入れる" %>
+        <% form.object.images.each do |image| %>
+          <div class="side-by-side">
+            <%= image_tag image, class: "image-size" %>
+            <%= form.check_box :image_ids, {multiple: true}, image.id, false%>
+          </div>
+        <% end %>
+      <% end %>
+    <div>
+      <%= form.file_field :images, multiple: true %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :name_ja %>
+    <%= form.text_field :name_ja %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name_en %>
+    <%= form.text_field :name_en %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name_gun %>
+    <%= form.text_field :name_gun %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gun_category_id %>
+    <%= form.collection_radio_buttons :gun_category_id, GunCategory.all, :id, :name, form.object.gun_category_id.blank? ? {checked: 1} : {checked: form.object.gun_category_id} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gun_type_id %>
+    <%= form.number_field :gun_type_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country_id %>
+    <%= form.collection_select(:country_id, Country.all, :id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :motif %>
+    <%= form.text_area :motif %>
+  </div>
+
+  <%= form.fields_for :information do |i| %>
+    <%= render "information_form", form: i %>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

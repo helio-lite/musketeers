@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Characters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name ja</th>
+      <th>Name en</th>
+      <th>Name gun</th>
+      <th>Gun category</th>
+      <th>Gun type</th>
+      <th>Country</th>
+      <th>Motif</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @characters.each do |character| %>
+      <tr>
+        <td><%= character.name_ja %></td>
+        <td><%= character.name_en %></td>
+        <td><%= character.name_gun %></td>
+        <td><%= character.gun_category_id %></td>
+        <td><%= character.gun_type_id %></td>
+        <td><%= character.country_id %></td>
+        <td><%= character.motif %></td>
+        <td><%= link_to 'Show', character %></td>
+        <td><%= link_to 'Edit', edit_character_path(character) %></td>
+        <td><%= link_to 'Destroy', character, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Character', new_character_path %>

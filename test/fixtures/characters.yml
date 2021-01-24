@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_ja: MyString
+  name_en: MyString
+  name_gun: MyString
+  gun_category_id: 1
+  gun_type_id: 1
+  country_id: 1
+  motif: MyText
+
+two:
+  name_ja: MyString
+  name_en: MyString
+  name_gun: MyString
+  gun_category_id: 1
+  gun_type_id: 1
+  country_id: 1
+  motif: MyText
