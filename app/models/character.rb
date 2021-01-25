@@ -7,6 +7,7 @@ class Character < ApplicationRecord
 
   validates :name_ja, :name_en, :name_gun, uniqueness: true, presence: true
   validate  :gun_category #古銃か現代銃かのみ選択
+  before_validation :character_sprit #入力値前後スペース除去
 
   private
 
@@ -17,4 +18,10 @@ class Character < ApplicationRecord
     end
   end
 
+  def character_sprit
+    self.name_ja.strip!
+    self.name_en.strip!
+    self.name_gun.strip!
+    self.motif.strip!
+  end
 end
