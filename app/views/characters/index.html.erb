@@ -8,6 +8,7 @@
       <th>Name ja</th>
       <th>Name en</th>
       <th>Name gun</th>
+      <th></th>
       <th>Gun category</th>
       <th>Gun type</th>
       <th>Country</th>
@@ -22,6 +23,7 @@
         <td><%= character.name_ja %></td>
         <td><%= character.name_en %></td>
         <td><%= character.name_gun %></td>
+        <td><%= image_tag character.images.first, class: "top-thumbnail" %></td>
         <td><%= character.gun_category_id %></td>
         <td><%= character.gun_type_id %></td>
         <td><%= character.country_id %></td>

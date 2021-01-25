@@ -12,3 +12,11 @@
   max-width: 100%;
   max-height: 320px; //高さは指定する
 }
+
+/* TOPサムネイル */
+.top-thumbnail {
+  width: 100px;
+  height: 100px;
+  object-fit: cover; //画像縦横比保持
+  object-position: center center; //位置フォーカス
+}
