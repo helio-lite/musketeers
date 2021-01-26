@@ -25,8 +25,8 @@ class CharactersController < ApplicationController
   def edit
     if @character.information.count == 0
       2.times{@character.information.build}
-    else @character.information.count == 1
-      @character.information.build
+    else
+      @character.information.build if @character.information.count == 1
     end
   end
 
