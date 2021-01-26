@@ -23,7 +23,11 @@
         <td><%= character.name_ja %></td>
         <td><%= character.name_en %></td>
         <td><%= character.name_gun %></td>
-        <td><%= image_tag character.images.first, class: "top-thumbnail" %></td>
+        <td>
+          <% if character.images.present? %>
+            <%= image_tag character.images.first, class: "top-thumbnail" %>
+          <% end %>
+        </td>
         <td><%= character.gun_category_id %></td>
         <td><%= character.gun_type_id %></td>
         <td><%= character.country_id %></td>
