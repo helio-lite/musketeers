@@ -18,12 +18,16 @@ class CharactersController < ApplicationController
   # GET /characters/new
   def new
     @character = Character.new
-    @character.information.build
+    2.times{@character.information.build}
   end
 
   # GET /characters/1/edit
   def edit
-    @character.information.build
+    if @character.information.count == 0
+      2.times{@character.information.build}
+    else @character.information.count == 1
+      @character.information.build
+    end
   end
 
   # POST /characters
