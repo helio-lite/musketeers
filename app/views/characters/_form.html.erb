@@ -14,7 +14,9 @@
   <div class="field">
     <%= form.label :images %>
       <% if form.object.images.present? %>
-      <%= "削除したい画像はチェックを入れる" %>
+        <div>
+          <%= "削除したい画像はチェックを入れる" %>
+        </div>
         <% form.object.images.each do |image| %>
           <div class="side-by-side">
             <%= image_tag image, class: "image-size" %>
