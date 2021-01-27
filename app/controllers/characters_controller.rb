@@ -12,7 +12,7 @@ class CharactersController < ApplicationController
   def show
     @gun_category = GunCategory.find(@character.gun_category_id).name
     @country = Country.find(@character.country_id).name 
-    @information = @character.information
+    @information = @character.information.order(:title_id) #千銃士/千銃士Rの順にする
   end
 
   # GET /characters/new
