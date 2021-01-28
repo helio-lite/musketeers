@@ -21,6 +21,12 @@
   object-position: center center; //位置フォーカス
 }
 
+/* 画像スライド */
+.swiper-container {
+  width: 600px;
+  height: 300px;
+}
+
 /* show画面タブ切り替え */
 .tab-wrap {
     display: flex;
