@@ -13,6 +13,13 @@
   max-height: 320px; //高さは指定する
 }
 
+/* 画像位置上下中央揃え */
+.image-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* TOPサムネイル */
 .top-thumbnail {
   width: 100px;

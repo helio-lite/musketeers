@@ -5,7 +5,7 @@
   <div class="swiper-wrapper">
     <!-- Slides -->
     <% @character.images.each do |i| %>
-      <div class="swiper-slide">
+      <div class="swiper-slide image-layout">
         <%= image_tag i, class: "image-size" %>
       </div>
     <% end %>
