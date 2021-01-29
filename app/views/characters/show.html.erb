@@ -6,7 +6,10 @@
     <!-- Slides -->
     <% @character.images.each do |i| %>
       <div class="swiper-slide image-layout">
-        <%= image_tag i, class: "image-size" %>
+        <!-- クリックで画像拡大 -->
+        <%= link_to i, "data-lightbox": i do %>
+          <%= image_tag i, class: "image-size" %>
+        <% end %>
       </div>
     <% end %>
   </div>
