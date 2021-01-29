@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_22_024622) do
+ActiveRecord::Schema.define(version: 2021_01_29_075033) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -43,9 +43,6 @@ ActiveRecord::Schema.define(version: 2021_01_22_024622) do
     t.text "motif"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name_en"], name: "index_characters_on_name_en", unique: true
-    t.index ["name_gun"], name: "index_characters_on_name_gun", unique: true
-    t.index ["name_ja"], name: "index_characters_on_name_ja", unique: true
   end
 
   create_table "countries", force: :cascade do |t|
