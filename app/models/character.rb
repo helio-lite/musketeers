@@ -5,7 +5,7 @@ class Character < ApplicationRecord
                                  reject_if: lambda{|attributes| attributes[:introduction].blank? || attributes[:height].blank? || attributes[:hobby].blank? || attributes[:favorite].blank?}
   has_many_attached :images
 
-  validates :name_ja, :name_en, :name_gun, uniqueness: true, presence: true
+  validates :name_ja, :name_en, :name_gun, presence: true #同名でも別銃の場合があるので同名可
   validate  :gun_category #古銃か現代銃かのみ選択
   before_validation :character_sprit #入力値前後スペース除去
 
