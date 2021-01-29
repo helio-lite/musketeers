@@ -96,6 +96,7 @@ class CharactersController < ApplicationController
         :gun_type_id,
         :country_id,
         :motif,
+        #Active Storageの画像用パラメータ
         images: [],
         #無印とRの情報
         information_attributes: [
@@ -106,6 +107,7 @@ class CharactersController < ApplicationController
           :height,
           :hobby,
           :favorite,
+          #チェックボックスで_destroyチェック入りなら削除になる
           :_destroy
         ]
       )

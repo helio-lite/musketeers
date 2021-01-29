@@ -20,7 +20,7 @@
         <% form.object.images.each do |image| %>
           <div class="side-by-side">
             <%= image_tag image, class: "image-size" %>
-            <%= form.check_box :image_ids, {multiple: true}, image.id, false%>
+            <%= form.check_box :image_ids, {multiple: true}, image.id, false %>
           </div>
         <% end %>
       <% end %>

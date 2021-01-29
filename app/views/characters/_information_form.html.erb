@@ -1,5 +1,10 @@
   <%= form.hidden_field :character_id, value: params[:id] %>
 
+  <div>
+    <%= "削除対象はチェックを入れる" %>
+    <%= form.check_box "_destroy" %>
+  </div>
+
   <div class="field">
     <%= form.label :title %>
     <%= form.collection_radio_buttons :title_id, Title.all, :id, :name, form.object.title_id.blank? ? {checked: 1} : {checked: form.object.title_id} %>
