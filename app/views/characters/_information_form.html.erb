@@ -1,9 +1,12 @@
   <%= form.hidden_field :character_id, value: params[:id] %>
 
-  <div>
-    <%= "削除対象はチェックを入れる" %>
-    <%= form.check_box "_destroy" %>
-  </div>
+  <!-- 新規作成なら削除ボックス非表示 -->
+  <% if form.object.id.present? %>
+    <div>
+      <%= "削除対象はチェックを入れる" %>
+      <%= form.check_box "_destroy" %>
+    </div>
+  <% end %>
 
   <div class="field">
     <%= form.label :title %>
