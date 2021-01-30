@@ -63,3 +63,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # マスタデータ管理
 gem 'active_hash'
+
+# ページネーション
+gem 'kaminari'

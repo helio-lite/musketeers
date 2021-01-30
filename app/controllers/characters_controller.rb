@@ -4,7 +4,7 @@ class CharactersController < ApplicationController
   # GET /characters
   # GET /characters.json
   def index
-    @characters = Character.all.with_attached_images
+    @characters = Character.all.with_attached_images.page(params[:page]).per(5)
   end
 
   # GET /characters/1
