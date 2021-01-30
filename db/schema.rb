@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_29_075033) do
+ActiveRecord::Schema.define(version: 2021_01_30_001812) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -45,18 +45,6 @@ ActiveRecord::Schema.define(version: 2021_01_29_075033) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "countries", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "gun_categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "information", force: :cascade do |t|
     t.integer "character_id"
     t.integer "title_id"
@@ -67,12 +55,6 @@ ActiveRecord::Schema.define(version: 2021_01_29_075033) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["character_id"], name: "index_information_on_character_id"
-  end
-
-  create_table "titles", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end
