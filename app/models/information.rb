@@ -11,7 +11,7 @@ class Information < ApplicationRecord
   private
 
   def info_count
-    if character.information.count >= 2
+    if character.information.count > 2
       errors.add(:character, "銃一種につきinformationは2件です")
     end
   end
