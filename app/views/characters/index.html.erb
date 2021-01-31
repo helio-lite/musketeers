@@ -2,6 +2,14 @@
 
 <h1>Characters</h1>
 
+<%= form_with url: characters_path, method: :get, local: true do %>
+  <%= text_field_tag :keyword, params[:keyword] %>
+  <%= collection_radio_buttons(:gun_category, :gun_category_id, GunCategory.all, :id, :name, params[:gun_category].blank? ? {checked: false} : {checked: params[:gun_category][:gun_category_id]}) %>
+  <%= select_tag(:country, options_from_collection_for_select(Country.all, :id, :name, selected: params[:country]), {include_blank: ""}) %>
+  <%= submit_tag "Search" %>
+  <%= link_to "Reset", characters_path %>
+<% end %>
+
 <div>
   <%= paginate @characters %>
 </div>

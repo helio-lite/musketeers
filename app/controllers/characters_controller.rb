@@ -4,7 +4,14 @@ class CharactersController < ApplicationController
   # GET /characters
   # GET /characters.json
   def index
-    @characters = Character.all.with_attached_images.page(params[:page]).per(5)
+    if params[:commit] == "Search"
+      keyword = params[:keyword]
+      category = params[:gun_category][:gun_category_id]
+      country = params[:country]
+      @characters = Character.search_result(keyword, category, country).with_attached_images.page(params[:page]).per(5)
+    else
+      @characters = Character.all.with_attached_images.page(params[:page]).per(5)
+    end
   end
 
   # GET /characters/1

@@ -24,4 +24,30 @@ class Character < ApplicationRecord
     self.name_gun.strip!
     self.motif.strip!
   end
+
+  # 条件ごとに検索を分岐する
+  def Character.search_result(keyword, category, country)
+    if keyword.present?
+      if country.blank? && category.blank?
+        Character.
+          where("name_ja like ? OR name_en like ? OR name_gun like ?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%")
+      elsif country.present? || category.present?
+        Character.
+          where("(name_ja like ? OR name_en like ? OR name_gun like ?) AND (gun_category_id = ? OR country_id = ?)", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", category, country)
+      else
+        Character.
+          where("(name_ja like ? OR name_en like ? OR name_gun like ?) AND (gun_category_id = ? AND country_id = ?)", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", category, country)
+      end
+    else
+      if country.present? && category.present?
+        Character.
+          where("gun_category_id = ? AND country_id = ?", category, country)
+      elsif country.present? || category.present?
+        Character.
+          where("gun_category_id = ? OR country_id = ?", category, country)
+      else
+        Character.all
+      end
+    end
+  end
 end
