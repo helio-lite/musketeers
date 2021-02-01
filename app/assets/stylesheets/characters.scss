@@ -34,35 +34,46 @@
   height: 600px;
 }
 
-/* show画面タブ切り替え */
+/* ここからshow画面タブ切り替え */
 .tab-wrap {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .tab-label {
-    color: White;
-    background: LightGray;
-    margin-right: 5px;
-    padding: 3px 12px;
-    order: -1;
+  color: White;
+  background: LightGray;
+  margin-right: 5px;
+  padding: 3px 12px;
+  order: -1;
 }
 
 .tab-content {
-    width: 100%;
-    display: none;
+  width: 100%;
+  display: none;
 }
 
 /* アクティブなタブ */
 .tab-switch:checked+.tab-label {
-    background: Black;
+  background: Black;
 }
 .tab-switch:checked+.tab-label+.tab-content {
-    display: block;
+  display: block;
 }
 
 /* ラジオボタン非表示 */
 .tab-switch {
-    display: none;
+  display: none;
 }
 /* ここまでshow画面タブ切り替え */
+
+
+/* ここから検索フォームレイアウト */
+.search-field-wrap {
+  display: inline-block;
+  height: 30px;
+  .radio-buttons {
+    display: inline-flex;
+  }
+}
+/* ここまで検索フォームレイアウト */
