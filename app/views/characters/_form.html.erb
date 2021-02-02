@@ -46,7 +46,9 @@
 
   <div class="field">
     <%= form.label :gun_category_id %>
-    <%= form.collection_radio_buttons :gun_category_id, GunCategory.all, :id, :name, form.object.gun_category_id.blank? ? {checked: 1} : {checked: form.object.gun_category_id} %>
+    <div class="radio-button-form">
+      <%= form.collection_radio_buttons :gun_category_id, GunCategory.all, :id, :name, form.object.gun_category_id.blank? ? {checked: 1} : {checked: form.object.gun_category_id} %>
+    </div>
   </div>
 
   <div class="field">

@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*form ラジオボタンを横並びにする */
+.radio-button-form {
+  display: inline-flex;
+}
+
 /* 画像を横並びにする */
 .side-by-side {
   display: inline-block;
