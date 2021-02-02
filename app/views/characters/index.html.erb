@@ -10,7 +10,9 @@
     </div>
     <%= select_tag(:country, options_from_collection_for_select(Country.all, :id, :name, selected: params[:country]), {include_blank: "国名を選択"}) %>
     <%= submit_tag "Search" %>
-    <%= link_to "Reset", characters_path %>
+    <%= link_to characters_path do %>
+      <%= button_tag "Reset" %>
+    <% end %>
   <% end %>
 </div>
 

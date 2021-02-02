@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/*form ラジオボタンを横並びにする */
+/* form ラジオボタンを横並びにする */
 .radio-button-form {
   display: inline-flex;
 }
@@ -66,7 +66,7 @@
   display: block;
 }
 
-/* ラジオボタン非表示 */
+/* タブ切り替えラジオボタン非表示 */
 .tab-switch {
   display: none;
 }
@@ -78,7 +78,7 @@
   display: inline-block;
   height: 30px;
   .radio-buttons {
-    display: inline-flex;
+    display: inline-flex; //ラジオボタン横並び
   }
 }
 /* ここまで検索フォームレイアウト */
