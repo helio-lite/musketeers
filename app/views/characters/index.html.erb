@@ -4,7 +4,10 @@
 
 <div class="search-field-wrap">
   <%= form_with url: characters_path, method: :get, local: true do %>
-    <%= text_field_tag :keyword, params[:keyword], placeholder: "キーワード入力" %>
+    <div class="keyword-search">
+      <%= text_field_tag :keyword, params[:keyword], placeholder: "キーワード入力" %>
+      <div class="clear-button fas fa-times"></div>
+    </div>
     <div class="radio-buttons">
       <%= collection_radio_buttons(:gun_category, :gun_category_id, GunCategory.all, :id, :name, params[:gun_category].blank? ? {checked: false} : {checked: params[:gun_category][:gun_category_id]}) %>
     </div>

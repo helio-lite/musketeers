@@ -2,6 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* テキストフォームに×アイコン表示 */
+.keyword-search {
+  position: relative; //これ書かないとフォームに×を取り込めない
+  display: inline-block;
+ .clear-button {
+   width: 13px;
+   height: 13px;
+   position: absolute; //×をフォーム右端に配置
+   right: 2px;
+   top: 4px;
+   cursor: pointer; //×にカーソルを当てたらポインタに変える
+  }
+}
+
 /* form ラジオボタンを横並びにする */
 .radio-button-form {
   display: inline-flex;
