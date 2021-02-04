@@ -31,7 +31,10 @@
 
   <div class="field">
     <%= form.label :name_ja %>
-    <%= form.text_field :name_ja %>
+    <div class="text-field">
+      <%= form.text_field :name_ja, onkeydown: "NameFieldKeyDown()" %>
+      <div id="name-ja-clear" class="clear-button fas fa-times" onclick="NameClearButton()"></div>
+    </div>
   </div>
 
   <div class="field">
@@ -74,3 +77,19 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+<script>
+  // 入力フィールドクリアボタン
+  function NameClearButton(){
+    this.character_name_ja.value="";
+    this.character_name_ja.focus(); // クリアボタン押下でフォーカス
+    target = document.getElementById("name-ja-clear");
+    target.style.visibility = "hidden"; // クリアでクリアボタンも非表示にする
+  }
+
+  // 入力時のみクリアボタン表示
+  function NameFieldKeyDown(){
+    target = document.getElementById("name-ja-clear");
+    target.style.visibility = "visible";
+  }
+</script>

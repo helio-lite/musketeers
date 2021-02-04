@@ -4,7 +4,7 @@
 
 <div class="search-field-wrap">
   <%= form_with url: characters_path, method: :get, local: true do %>
-    <div class="keyword-search">
+    <div class="text-field">
       <%= text_field_tag :keyword, params[:keyword], placeholder: "キーワード入力", onkeydown: "SearchFieldKeyDown()" %>
       <div id="search-field-clear" class="clear-button fas fa-times" onclick="KeywordClearButton()"></div>
     </div>
@@ -66,7 +66,7 @@
 <%= link_to 'New Character', new_character_path %>
 
 <script>
-  // 検索フィールドクリアボタン
+  // onclick 検索フィールドクリアボタン
   function KeywordClearButton(){
     this.keyword.value="";
     this.keyword.focus(); // クリアボタン押下でフォーカス
@@ -74,7 +74,7 @@
     target.style.visibility = "hidden"; // キーワードクリアでクリアボタンも非表示にする
   }
 
-  // 入力時のみクリアボタン表示
+  // onkeydown 入力時のみクリアボタン表示
   function SearchFieldKeyDown(){
     target = document.getElementById("search-field-clear");
     target.style.visibility = "visible";
