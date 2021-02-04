@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* テキストフォームに×アイコン表示 */
+// テキストフォームに×アイコン表示
 .keyword-search {
   position: relative; // これ書かないとフォームに×を取り込めない
   display: inline-block;
@@ -17,30 +17,30 @@
   }
 }
 
-/* form ラジオボタンを横並びにする */
+// form ラジオボタンを横並びにする
 .radio-button-form {
   display: inline-flex;
 }
 
-/* 画像を横並びにする */
+// 画像を横並びにする
 .side-by-side {
   display: inline-block;
 }
 
-/* 画像サイズ統一 */
+// 画像サイズ統一
 .image-size {
   max-width: 100%;
   max-height: 320px; //高さは指定する
 }
 
-/* 画像位置上下中央揃え */
+// 画像位置上下中央揃え
 .image-layout {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* TOPサムネイル */
+// TOPサムネイル
 .top-thumbnail {
   width: 100px;
   height: 100px;
@@ -48,13 +48,13 @@
   object-position: center center; //位置フォーカス
 }
 
-/* 画像スライド外枠 */
+// 画像スライド外枠
 .swiper-container {
   width: 600px;
   height: 600px;
 }
 
-/* ここからshow画面タブ切り替え */
+// ここからshow画面タブ切り替え
 .tab-wrap {
   display: flex;
   flex-wrap: wrap;
@@ -73,7 +73,7 @@
   display: none;
 }
 
-/* アクティブなタブ */
+// アクティブなタブ
 .tab-switch:checked+.tab-label {
   background: Black;
 }
@@ -81,14 +81,14 @@
   display: block;
 }
 
-/* タブ切り替えラジオボタン非表示 */
+// タブ切り替えラジオボタン非表示
 .tab-switch {
   display: none;
 }
-/* ここまでshow画面タブ切り替え */
+// ここまでshow画面タブ切り替え
 
 
-/* ここから検索フォームレイアウト */
+// ここから検索フォームレイアウト
 .search-field-wrap {
   display: inline-block;
   height: 30px;
@@ -96,4 +96,4 @@
     display: inline-flex; //ラジオボタン横並び
   }
 }
-/* ここまで検索フォームレイアウト */
+// ここまで検索フォームレイアウト
