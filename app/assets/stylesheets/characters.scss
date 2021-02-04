@@ -4,15 +4,16 @@
 
 /* テキストフォームに×アイコン表示 */
 .keyword-search {
-  position: relative; //これ書かないとフォームに×を取り込めない
+  position: relative; // これ書かないとフォームに×を取り込めない
   display: inline-block;
  .clear-button {
    width: 13px;
    height: 13px;
-   position: absolute; //×をフォーム右端に配置
+   position: absolute; // ×をフォーム右端に配置
    right: 2px;
    top: 4px;
-   cursor: pointer; //×にカーソルを当てたらポインタに変える
+   cursor: pointer; // ×にカーソルを当てたらポインタに変える
+   visibility: hidden; // フィールドが空なら×ボタン非表示
   }
 }
 

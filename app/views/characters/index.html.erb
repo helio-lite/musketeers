@@ -4,9 +4,9 @@
 
 <div class="search-field-wrap">
   <%= form_with url: characters_path, method: :get, local: true do %>
-    <div class="keyword-search" name="">
-      <%= text_field_tag :keyword, params[:keyword], placeholder: "キーワード入力" %>
-      <div class="clear-button fas fa-times" onclick="KeywordClearButton()"></div>
+    <div class="keyword-search">
+      <%= text_field_tag :keyword, params[:keyword], placeholder: "キーワード入力", onkeydown: "SearchFieldKeyDown()" %>
+      <div id="search-field-clear" class="clear-button fas fa-times" onclick="KeywordClearButton()"></div>
     </div>
     <div class="radio-buttons">
       <%= collection_radio_buttons(:gun_category, :gun_category_id, GunCategory.all, :id, :name, params[:gun_category].blank? ? {checked: false} : {checked: params[:gun_category][:gun_category_id]}) %>
@@ -65,9 +65,18 @@
 
 <%= link_to 'New Character', new_character_path %>
 
-<!-- 検索フィールドクリアボタン -->
 <script>
+  // 検索フィールドクリアボタン
   function KeywordClearButton(){
     this.keyword.value="";
+    this.keyword.focus(); // クリアボタン押下でフォーカス
+    target = document.getElementById("search-field-clear");
+    target.style.visibility = "hidden"; // キーワードクリアでクリアボタンも非表示にする
+  }
+
+  // 入力時のみクリアボタン表示
+  function SearchFieldKeyDown(){
+    target = document.getElementById("search-field-clear");
+    target.style.visibility = "visible";
   }
 </script>
