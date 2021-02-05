@@ -32,14 +32,17 @@
   <div class="field">
     <%= form.label :name_ja %>
     <div class="text-field">
-      <%= form.text_field :name_ja, onkeydown: "NameFieldKeyDown()" %>
-      <div id="name-ja-clear" class="clear-button fas fa-times" onclick="NameClearButton()"></div>
+      <%= form.text_field :name_ja, onkeydown: "NameJaFieldKeyDown()" %>
+      <div id="name-ja-clear" class="clear-button fas fa-times" onclick="NameJaClearButton()"></div>
     </div>
   </div>
 
   <div class="field">
     <%= form.label :name_en %>
-    <%= form.text_field :name_en %>
+    <div class="text-field">
+      <%= form.text_field :name_en, onkeydown: "NameEnFieldKeyDown()" %>
+      <div id="name-en-clear" class="clear-button fas fa-times" onclick="NameEnClearButton()"></div>
+    </div>
   </div>
 
   <div class="field">
@@ -79,17 +82,33 @@
 <% end %>
 
 <script>
-  // 入力フィールドクリアボタン
-  function NameClearButton(){
-    this.character_name_ja.value="";
-    this.character_name_ja.focus(); // クリアボタン押下でフォーカス
+  // ここから日本語名入力
+  function NameJaClearButton(){
+    clearTargetId = document.getElementById("character_name_ja");
+    this.clearTargetId.value="";
+    this.clearTargetId.focus(); // クリアボタン押下でフォーカス
     target = document.getElementById("name-ja-clear");
     target.style.visibility = "hidden"; // クリアでクリアボタンも非表示にする
   }
-
   // 入力時のみクリアボタン表示
-  function NameFieldKeyDown(){
+  function NameJaFieldKeyDown(){
     target = document.getElementById("name-ja-clear");
     target.style.visibility = "visible";
   }
+  // ここまで日本語名入力
+
+  // ここから英語名入力
+  function NameEnClearButton(){
+    clearTargetId = document.getElementById("character_name_en");
+    this.clearTargetId.value="";
+    this.clearTargetId.focus(); // クリアボタン押下でフォーカス
+    target = document.getElementById("name-en-clear");
+    target.style.visibility = "hidden"; // クリアでクリアボタンも非表示にする
+  }
+  // 入力時のみクリアボタン表示
+  function NameEnFieldKeyDown(){
+    target = document.getElementById("name-en-clear");
+    target.style.visibility = "visible";
+  }
+  // ここまで英語名入力
 </script>
