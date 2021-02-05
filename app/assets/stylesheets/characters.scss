@@ -17,6 +17,21 @@
   }
 }
 
+// テキストエリアに×アイコン表示
+.text-area {
+  position: relative; // これ書かないとエリアに×を取り込めない
+  display: inline-block;
+ .clear-button {
+   width: 13px;
+   height: 13px;
+   position: absolute; // ×をエリア右上に配置
+   right: 0px;
+   top: 0px;
+   cursor: pointer; // ×にカーソルを当てたらポインタに変える
+   visibility: hidden; // エリアが空なら×ボタン非表示
+  }
+}
+
 // form ラジオボタンを横並びにする
 .radio-button-form {
   display: inline-flex;
