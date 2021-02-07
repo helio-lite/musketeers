@@ -1,4 +1,6 @@
   <%= form.hidden_field :character_id, value: params[:id] %>
+  <!-- クリアボタン用ID取得 / 関数内で引き渡す -->
+  <% @info_index = form.index %>
 
   <!-- 新規作成なら削除ボックス非表示 -->
   <% if form.object.id.present? %>
@@ -17,7 +19,9 @@
 
   <div class="field">
     <%= form.label :introduction %>
-    <%= form.text_area :introduction %>
+    <div class="text-area">
+      <%= form.text_area :introduction, onkeydown: "IntroductionKeyDown(#{@info_index})" %>
+      <div id="introduction-<%= @info_index %>-clear" class="clear-button fas fa-times" onclick="IntroductionClearButton(<%= @info_index %>)"></div>
   </div>
 
   <div class="field">
@@ -27,10 +31,16 @@
 
   <div class="field">
     <%= form.label :hobby %>
-    <%= form.text_field :hobby %>
+    <div class="text-field">
+      <%= form.text_field :hobby, onkeydown: "HobbyKeyDown(#{@info_index})" %>
+      <div id="hobby-<%= @info_index %>-clear" class="clear-button fas fa-times" onclick="HobbyClearButton(<%= @info_index %>)"></div>
+    </div>
   </div>
 
   <div class="field">
     <%= form.label :favorite %>
-    <%= form.text_field :favorite %>
+    <div class="text-field">
+      <%= form.text_field :favorite, onkeydown: "FavoriteKeyDown(#{@info_index})" %>
+      <div id="favorite-<%= @info_index %>-clear" class="clear-button fas fa-times" onclick="FavoriteClearButton(<%= @info_index %>)"></div>
+    </div>
   </div>

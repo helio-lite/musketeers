@@ -147,4 +147,50 @@
     target.style.visibility = "visible";
   }
   // ここまでモチーフ文入力
+
+  // ここから自己紹介文入力
+  function IntroductionClearButton(ele){
+    // 変数展開したいので``でIDを囲む
+    clearTargetId = document.getElementById(`character_information_attributes_${ele}_introduction`);
+    this.clearTargetId.value="";
+    this.clearTargetId.focus(); // クリアボタン押下でフォーカス
+    target = document.getElementById(`introduction-${ele}-clear`);
+    target.style.visibility = "hidden"; // クリアでクリアボタンも非表示にする
+  }
+  // 入力時のみクリアボタン表示
+  function IntroductionKeyDown(ele){
+    target = document.getElementById(`introduction-${ele}-clear`);
+    target.style.visibility = "visible";
+  }
+  // ここまで自己紹介文入力
+
+  // ここから趣味入力
+  function HobbyClearButton(ele){
+    clearTargetId = document.getElementById(`character_information_attributes_${ele}_hobby`);
+    this.clearTargetId.value="";
+    this.clearTargetId.focus(); // クリアボタン押下でフォーカス
+    target = document.getElementById(`hobby-${ele}-clear`);
+    target.style.visibility = "hidden"; // クリアでクリアボタンも非表示にする
+  }
+  // 入力時のみクリアボタン表示
+  function HobbyKeyDown(ele){
+    target = document.getElementById(`hobby-${ele}-clear`);
+    target.style.visibility = "visible";
+  }
+  // ここまで趣味入力
+
+  // ここから好きなもの入力
+  function FavoriteClearButton(ele){
+    clearTargetId = document.getElementById(`character_information_attributes_${ele}_favorite`);
+    this.clearTargetId.value="";
+    this.clearTargetId.focus(); // クリアボタン押下でフォーカス
+    target = document.getElementById(`favorite-${ele}-clear`);
+    target.style.visibility = "hidden"; // クリアでクリアボタンも非表示にする
+  }
+  // 入力時のみクリアボタン表示
+  function FavoriteKeyDown(ele){
+    target = document.getElementById(`favorite-${ele}-clear`);
+    target.style.visibility = "visible";
+  }
+  // ここまで好きなもの入力
 </script>
