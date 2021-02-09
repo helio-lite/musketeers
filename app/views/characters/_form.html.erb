@@ -88,22 +88,27 @@
 <% end %>
 
 <script>
-  // ここから日本語名入力
+// ここから日本語名入力
+  // 日本語名クリアボタン
   function NameJaClearButton(){
     clearTargetId = document.getElementById("character_name_ja");
     this.clearTargetId.value="";
     this.clearTargetId.focus(); // クリアボタン押下でフォーカス
     target = document.getElementById("name-ja-clear");
-    target.style.visibility = "hidden"; // クリアでクリアボタンも非表示にする
+    target.style.visibility = "hidden"; // 内容クリアでクリアボタンも非表示にする
   }
   // 入力時のみクリアボタン表示
   function NameJaFieldKeyDown(){
-    target = document.getElementById("name-ja-clear");
-    target.style.visibility = "visible";
+    clearTargetId = document.getElementById("character_name_ja");
+    if (this.clearTargetId.value.length > 0) {
+      target = document.getElementById("name-ja-clear");
+      target.style.visibility = "visible";
+    }
   }
-  // ここまで日本語名入力
+// ここまで日本語名入力
 
-  // ここから英語名入力
+// ここから英語名入力
+  // 英語名クリアボタン
   function NameEnClearButton(){
     clearTargetId = document.getElementById("character_name_en");
     this.clearTargetId.value="";
@@ -113,12 +118,16 @@
   }
   // 入力時のみクリアボタン表示
   function NameEnFieldKeyDown(){
-    target = document.getElementById("name-en-clear");
-    target.style.visibility = "visible";
+    clearTargetId = document.getElementById("character_name_en");
+    if (this.clearTargetId.value.length > 0) {
+      target = document.getElementById("name-en-clear");
+      target.style.visibility = "visible";
+    }
   }
-  // ここまで英語名入力
+// ここまで英語名入力
 
-  // ここからモチーフ名入力
+// ここからモチーフ名入力
+  // モチーフ名クリアボタン
   function NameGunClearButton(){
     clearTargetId = document.getElementById("character_name_gun");
     this.clearTargetId.value="";
@@ -128,12 +137,16 @@
   }
   // 入力時のみクリアボタン表示
   function NameGunFieldKeyDown(){
-    target = document.getElementById("name-gun-clear");
-    target.style.visibility = "visible";
+    clearTargetId = document.getElementById("character_name_gun");
+    if (this.clearTargetId.value.length > 0) {
+      target = document.getElementById("name-gun-clear");
+      target.style.visibility = "visible";
+    }
   }
-  // ここまでモチーフ名入力
+// ここまでモチーフ名入力
 
-  // ここからモチーフ文入力
+// ここからモチーフ文入力
+  // モチーフ文クリアボタン
   function MotifClearButton(){
     clearTargetId = document.getElementById("character_motif");
     this.clearTargetId.value="";
@@ -143,12 +156,16 @@
   }
   // 入力時のみクリアボタン表示
   function MotifKeyDown(){
-    target = document.getElementById("motif-clear");
-    target.style.visibility = "visible";
+    clearTargetId = document.getElementById("character_motif");
+    if (this.clearTargetId.value.length > 0) {
+      target = document.getElementById("motif-clear");
+      target.style.visibility = "visible";
+    }
   }
-  // ここまでモチーフ文入力
+// ここまでモチーフ文入力
 
-  // ここから自己紹介文入力
+// ここから自己紹介文入力
+  // 自己紹介文クリアボタン
   function IntroductionClearButton(ele){
     // 変数展開したいので``でIDを囲む
     clearTargetId = document.getElementById(`character_information_attributes_${ele}_introduction`);
@@ -159,12 +176,16 @@
   }
   // 入力時のみクリアボタン表示
   function IntroductionKeyDown(ele){
-    target = document.getElementById(`introduction-${ele}-clear`);
-    target.style.visibility = "visible";
+    clearTargetId = document.getElementById(`character_information_attributes_${ele}_introduction`);
+    if (this.clearTargetId.value.length > 0) {
+      target = document.getElementById(`introduction-${ele}-clear`);
+      target.style.visibility = "visible";
+    }
   }
-  // ここまで自己紹介文入力
+// ここまで自己紹介文入力
 
-  // ここから趣味入力
+// ここから趣味入力
+  // 趣味クリアボタン
   function HobbyClearButton(ele){
     clearTargetId = document.getElementById(`character_information_attributes_${ele}_hobby`);
     this.clearTargetId.value="";
@@ -174,12 +195,16 @@
   }
   // 入力時のみクリアボタン表示
   function HobbyKeyDown(ele){
-    target = document.getElementById(`hobby-${ele}-clear`);
-    target.style.visibility = "visible";
+    clearTargetId = document.getElementById(`character_information_attributes_${ele}_hobby`);
+    if (this.clearTargetId.value.length > 0) {
+      target = document.getElementById(`hobby-${ele}-clear`);
+      target.style.visibility = "visible";
+    }
   }
-  // ここまで趣味入力
+// ここまで趣味入力
 
-  // ここから好きなもの入力
+// ここから好きなもの入力
+  // 好きなものクリアボタン
   function FavoriteClearButton(ele){
     clearTargetId = document.getElementById(`character_information_attributes_${ele}_favorite`);
     this.clearTargetId.value="";
@@ -189,8 +214,11 @@
   }
   // 入力時のみクリアボタン表示
   function FavoriteKeyDown(ele){
-    target = document.getElementById(`favorite-${ele}-clear`);
-    target.style.visibility = "visible";
+    clearTargetId = document.getElementById(`character_information_attributes_${ele}_favorite`);
+    if (this.clearTargetId.value.length > 0) {
+      target = document.getElementById(`favorite-${ele}-clear`);
+      target.style.visibility = "visible";
+    }
   }
-  // ここまで好きなもの入力
+// ここまで好きなもの入力
 </script>
