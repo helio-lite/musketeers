@@ -32,7 +32,7 @@
   <div class="field">
     <%= form.label :name_ja %>
     <div class="text-field">
-      <%= form.text_field :name_ja, onkeydown: "KeyDown('name', 'ja')", onclick: "ClearButtonDisplay('name', 'ja')" %>
+      <%= form.text_field :name_ja, onkeydown: "KeyDown('name', 'ja')", onclick: "ClearButtonDisplay('name', 'ja'), PasteCheck('name', 'ja')" %>
       <div id="name-ja-clear" class="clear-button fas fa-times" onclick="InputClear('name', 'ja')"></div>
     </div>
   </div>
@@ -40,7 +40,7 @@
   <div class="field">
     <%= form.label :name_en %>
     <div class="text-field">
-      <%= form.text_field :name_en, onkeydown: "KeyDown('name', 'en')", onclick: "ClearButtonDisplay('name', 'en')" %>
+      <%= form.text_field :name_en, onkeydown: "KeyDown('name', 'en')", onclick: "ClearButtonDisplay('name', 'en'), PasteCheck('name', 'en')" %>
       <div id="name-en-clear" class="clear-button fas fa-times" onclick="InputClear('name', 'en')"></div>
     </div>
   </div>
@@ -48,7 +48,7 @@
   <div class="field">
     <%= form.label :name_gun %>
     <div class="text-field">
-      <%= form.text_field :name_gun, onkeydown: "KeyDown('name', 'gun')", onclick: "ClearButtonDisplay('name', 'gun')" %>
+      <%= form.text_field :name_gun, onkeydown: "KeyDown('name', 'gun')", onclick: "ClearButtonDisplay('name', 'gun'), PasteCheck('name', 'gun')" %>
       <div id="name-gun-clear" class="clear-button fas fa-times" onclick="InputClear('name', 'gun')"></div>
     </div>
   </div>
@@ -73,7 +73,7 @@
   <div class="field">
     <%= form.label :motif %>
     <div class="text-area">
-      <%= form.text_area :motif, onkeydown: "KeyDown('motif')", onclick: "ClearButtonDisplay('motif')" %>
+      <%= form.text_area :motif, onkeydown: "KeyDown('motif')", onclick: "ClearButtonDisplay('motif'), PasteCheck('motif')" %>
       <div id="motif-clear" class="clear-button fas fa-times" onclick="InputClear('motif')"></div>
     </div>
   </div>
@@ -150,4 +150,22 @@
     }
   }
 // ここまでフィールドクリック時に入力値ありならクリアボタン表示
+
+// ここからコピーペースト検知でクリアボタン表示
+  function PasteCheck(ele1, ele2){
+    if (!ele2){
+      pasteTarget = document.getElementById(`character_${ele1}`);
+      clearButton = document.getElementById(`${ele1}-clear`);
+    } else if (ele1 == 0 || ele1 == 1) {
+      pasteTarget = document.getElementById(`character_information_attributes_${ele1}_${ele2}`);
+      clearButton = document.getElementById(`${ele2}-${ele1}-clear`);
+    } else {
+      pasteTarget = document.getElementById(`character_${ele1}_${ele2}`);
+      clearButton = document.getElementById(`${ele1}-${ele2}-clear`);
+    }
+    pasteTarget.addEventListener("paste", function(){
+      clearButton.style.visibility = "visible";
+    });
+  }
+// ここまでコピーペースト検知でクリアボタン表示
 </script>
