@@ -183,6 +183,16 @@
     motif.trigger("autosize.resize");
     introduction1.trigger("autosize.resize");
     introduction2.trigger("autosize.resize");
+    // クリアボタン押下でもリサイズ
+    $("#motif-clear").on("click", function(){
+      motif.trigger("autosize.resize");
+    })
+    $("#introduction-0-clear").on("click", function(){
+      introduction1.trigger("autosize.resize");
+    })
+    $("#introduction-1-clear").on("click", function(){
+      introduction2.trigger("autosize.resize");
+    })
   });
 // ここまでテキストエリアリサイズ
 </script>
