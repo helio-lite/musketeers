@@ -6,7 +6,10 @@
   <%= form_with url: characters_path, method: :get, local: true do %>
     <div class="text-field">
       <%= text_field_tag :keyword, params[:keyword], placeholder: "キーワード入力", onkeydown: "SearchFieldKeyDown()", onclick: "KeywordClearDisplay()" %>
-      <div id="search-field-clear" class="clear-button fas fa-times" onclick="KeywordClearButton()"></div>
+      <div id="search-field-clear" class="clear-button fas fa-times" onclick="KeywordClearButton()">
+        <!-- ツールチップ -->
+        <div class="search-clear-balloon">フォームクリア</div>
+      </div>
     </div>
     <div class="radio-buttons">
       <%= collection_radio_buttons(:gun_category, :gun_category_id, GunCategory.all, :id, :name, params[:gun_category].blank? ? {checked: false} : {checked: params[:gun_category][:gun_category_id]}) %>

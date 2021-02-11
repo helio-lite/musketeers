@@ -33,7 +33,10 @@
     <%= form.label :name_ja %>
     <div class="text-field">
       <%= form.text_field :name_ja, onkeydown: "KeyDown('name', 'ja')", onclick: "ClearButtonDisplay('name', 'ja'), PasteCheck('name', 'ja')" %>
-      <div id="name-ja-clear" class="clear-button fas fa-times" onclick="InputClear('name', 'ja')"></div>
+      <div id="name-ja-clear" class="clear-button fas fa-times" onclick="InputClear('name', 'ja')">
+        <!-- ツールチップ -->
+        <div class="form-clear-balloon">フォームクリア</div>
+      </div>
     </div>
   </div>
 
@@ -41,7 +44,10 @@
     <%= form.label :name_en %>
     <div class="text-field">
       <%= form.text_field :name_en, onkeydown: "KeyDown('name', 'en')", onclick: "ClearButtonDisplay('name', 'en'), PasteCheck('name', 'en')" %>
-      <div id="name-en-clear" class="clear-button fas fa-times" onclick="InputClear('name', 'en')"></div>
+      <div id="name-en-clear" class="clear-button fas fa-times" onclick="InputClear('name', 'en')">
+        <!-- ツールチップ -->
+        <div class="form-clear-balloon">フォームクリア</div>
+      </div>
     </div>
   </div>
 
@@ -49,7 +55,10 @@
     <%= form.label :name_gun %>
     <div class="text-field">
       <%= form.text_field :name_gun, onkeydown: "KeyDown('name', 'gun')", onclick: "ClearButtonDisplay('name', 'gun'), PasteCheck('name', 'gun')" %>
-      <div id="name-gun-clear" class="clear-button fas fa-times" onclick="InputClear('name', 'gun')"></div>
+      <div id="name-gun-clear" class="clear-button fas fa-times" onclick="InputClear('name', 'gun')">
+        <!-- ツールチップ -->
+        <div class="form-clear-balloon">フォームクリア</div>
+      </div>
     </div>
   </div>
 
@@ -73,10 +82,8 @@
   <div class="field">
     <%= form.label :motif %>
     <div class="text-area">
-    <!-- <div class="Textarea"> -->
-<!-- <div class="FlexTextarea__dummy" aria-hidden="true"></div> -->
       <%= form.text_area :motif, onkeydown: "KeyDown('motif')", onclick: "ClearButtonDisplay('motif'), PasteCheck('motif')", class: "" %>
-      <div id="motif-clear" class="clear-button fas fa-times" onclick="InputClear('motif')"></div>
+      <div id="motif-clear" class="clear-button fas fa-times" onclick="InputClear('motif')"><div class="form-clear-balloon">フォームクリア</div><!-- ツールチップ --></div>
     </div>
   </div>
 

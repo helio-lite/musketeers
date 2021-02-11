@@ -6,14 +6,27 @@
 .text-field {
   position: relative; // これ書かないとフォームに×を取り込めない
   display: inline-block;
- .clear-button {
-   width: 13px;
-   height: 13px;
-   position: absolute; // ×をフォーム右端に配置
-   right: 2px;
-   top: 4px;
-   cursor: pointer; // ×にカーソルを当てたらポインタに変える
-   visibility: hidden; // フィールドが空なら×ボタン非表示
+  .clear-button {
+    width: 13px;
+    height: 13px;
+    position: absolute; // ×をフォーム右端に配置
+    right: 2px;
+    top: 4px;
+    cursor: pointer; // ×にカーソルを当てたらポインタに変える
+    visibility: hidden; // フィールドが空なら×ボタン非表示
+    // 検索クリアボタン用ツールチップ
+    &:hover .search-clear-balloon {
+      display: inline-block;
+      top: 30px;
+      right: -30px;
+      left: -30px;
+    }
+    // フォームクリアボタン用ツールチップ
+    &:hover .form-clear-balloon {
+      display: inline-block;
+      top: -10px;
+      left: 20px;
+    }
   }
 }
 
@@ -21,16 +34,50 @@
 .text-area {
   position: relative; // これ書かないとエリアに×を取り込めない
   display: inline-block;
- .clear-button {
-   width: 13px;
-   height: 13px;
-   position: absolute; // ×をエリア右上に配置
-   right: 0px;
-   top: 0px;
-   cursor: pointer; // ×にカーソルを当てたらポインタに変える
-   visibility: hidden; // エリアが空なら×ボタン非表示
+  .clear-button {
+    width: 13px;
+    height: 13px;
+    position: absolute; // ×をエリア右上に配置
+    right: 0px;
+    top: 0px;
+    cursor: pointer; // ×にカーソルを当てたらポインタに変える
+    visibility: hidden; // エリアが空なら×ボタン非表示
+    // テキストエリアクリアボタン用ツールチップ
+    &:hover .form-clear-balloon {
+      display: inline-block;
+      top: -10px;
+      left: 20px;
+    }
   }
 }
+
+// ここから検索用ツールチップ
+.search-clear-balloon {
+  display: none;
+  position: absolute;
+  padding: 10px;
+  font-size: 10px;
+  line-height: 1.0em;
+  color: #fff;
+  border-radius: 5px;
+  background: #000;
+  width: 70px;
+}
+// ここまで検索用ツールチップ
+
+// ここから入力用ツールチップ
+.form-clear-balloon {
+  display: none;
+  position: absolute;
+  padding: 10px;
+  font-size: 10px;
+  line-height: 1.0em;
+  color: #fff;
+  border-radius: 5px;
+  background: #000;
+  width: 70px;
+}
+// ここまで入力用ツールチップ
 
 // form ラジオボタンを横並びにする
 .radio-button-form {

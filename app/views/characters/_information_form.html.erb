@@ -21,7 +21,11 @@
     <%= form.label :introduction %>
     <div class="text-area">
       <%= form.text_area :introduction, onkeydown: "KeyDown(#{@info_index}, 'introduction')", onclick: "ClearButtonDisplay(#{@info_index}, 'introduction'), PasteCheck(#{@info_index}, 'introduction')" %>
-      <div id="introduction-<%= @info_index %>-clear" class="clear-button fas fa-times" onclick="InputClear(<%= @info_index %>, 'introduction')"></div>
+      <div id="introduction-<%= @info_index %>-clear" class="clear-button fas fa-times" onclick="InputClear(<%= @info_index %>, 'introduction')">
+        <!-- ツールチップ -->
+        <div class="form-clear-balloon">フォームクリア</div>
+      </div>
+    </div>
   </div>
 
   <div class="field">
@@ -33,7 +37,10 @@
     <%= form.label :hobby %>
     <div class="text-field">
       <%= form.text_field :hobby, onkeydown: "KeyDown(#{@info_index}, 'hobby')", onclick: "ClearButtonDisplay(#{@info_index}, 'hobby'), PasteCheck(#{@info_index}, 'hobby')" %>
-      <div id="hobby-<%= @info_index %>-clear" class="clear-button fas fa-times" onclick="InputClear(<%= @info_index %>, 'hobby')"></div>
+      <div id="hobby-<%= @info_index %>-clear" class="clear-button fas fa-times" onclick="InputClear(<%= @info_index %>, 'hobby')">
+        <!-- ツールチップ -->
+        <div class="form-clear-balloon">フォームクリア</div>
+      </div>
     </div>
   </div>
 
@@ -41,6 +48,9 @@
     <%= form.label :favorite %>
     <div class="text-field">
       <%= form.text_field :favorite, onkeydown: "KeyDown(#{@info_index}, 'favorite')", onclick: "ClearButtonDisplay(#{@info_index}, 'favorite'), PasteCheck(#{@info_index}, 'favorite')" %>
-      <div id="favorite-<%= @info_index %>-clear" class="clear-button fas fa-times" onclick="InputClear(<%= @info_index %>, 'favorite')"></div>
+      <div id="favorite-<%= @info_index %>-clear" class="clear-button fas fa-times" onclick="InputClear(<%= @info_index %>, 'favorite')">
+        <!-- ツールチップ -->
+        <div class="form-clear-balloon">フォームクリア</div>
+      </div>
     </div>
   </div>
