@@ -73,7 +73,9 @@
   <div class="field">
     <%= form.label :motif %>
     <div class="text-area">
-      <%= form.text_area :motif, onkeydown: "KeyDown('motif')", onclick: "ClearButtonDisplay('motif'), PasteCheck('motif')" %>
+    <!-- <div class="Textarea"> -->
+<!-- <div class="FlexTextarea__dummy" aria-hidden="true"></div> -->
+      <%= form.text_area :motif, onkeydown: "KeyDown('motif')", onclick: "ClearButtonDisplay('motif'), PasteCheck('motif')", class: "" %>
       <div id="motif-clear" class="clear-button fas fa-times" onclick="InputClear('motif')"></div>
     </div>
   </div>
@@ -168,4 +170,19 @@
     });
   }
 // ここまでコピーペースト検知でクリアボタン表示
+
+// ここからテキストエリアリサイズ
+  $(function(){
+    var motif = $("#character_motif")
+    var introduction1 = $("#character_information_attributes_0_introduction")
+    var introduction2 = $("#character_information_attributes_1_introduction")
+    motif.autosize();
+    introduction1.autosize();
+    introduction2.autosize();
+    // コピーペースト検知でリサイズ
+    motif.trigger("autosize.resize");
+    introduction1.trigger("autosize.resize");
+    introduction2.trigger("autosize.resize");
+  });
+// ここまでテキストエリアリサイズ
 </script>
