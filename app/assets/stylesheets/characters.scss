@@ -159,3 +159,27 @@
   }
 }
 // ここまで検索フォームレイアウト
+
+// ここからテキストフィールド幅リサイズ
+.input-text_dummy {
+  display: inline-block;
+  overflow: hidden;
+  min-width: 170px; //未入力時幅を指定
+  white-space: nowrap;
+  opacity: 0;
+}
+.input-text_dummy::before {
+  content: '';
+}
+.input-text_dummy:empty::before {
+  content: attr(data-placeholder);
+}
+
+.input-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+// ここまでテキストフィールド幅リサイズ

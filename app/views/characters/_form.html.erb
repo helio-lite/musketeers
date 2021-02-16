@@ -32,7 +32,9 @@
   <div class="field">
     <%= form.label :name_ja %>
     <div class="text-field">
-      <%= form.text_field :name_ja, onkeydown: "KeyDown('name', 'ja')", onclick: "ClearButtonDisplay('name', 'ja'), PasteCheck('name', 'ja')" %>
+      <div class="input-text_dummy js-dummy-input-text" data-placeholder="日本語名入力"></div>
+      <%= form.text_field :name_ja, onkeydown: "KeyDown('name', 'ja')", onclick: "ClearButtonDisplay('name', 'ja'), PasteCheck('name', 'ja')", class: "input-text js-input-text", placeholder: "日本語名入力" %>
+      <!-- クリアボタン -->
       <div id="name-ja-clear" class="clear-button fas fa-times" onclick="InputClear('name', 'ja')">
         <!-- ツールチップ -->
         <div class="form-clear-balloon">フォームクリア</div>
@@ -44,6 +46,7 @@
     <%= form.label :name_en %>
     <div class="text-field">
       <%= form.text_field :name_en, onkeydown: "KeyDown('name', 'en')", onclick: "ClearButtonDisplay('name', 'en'), PasteCheck('name', 'en')" %>
+      <!-- クリアボタン -->
       <div id="name-en-clear" class="clear-button fas fa-times" onclick="InputClear('name', 'en')">
         <!-- ツールチップ -->
         <div class="form-clear-balloon">フォームクリア</div>
@@ -55,6 +58,7 @@
     <%= form.label :name_gun %>
     <div class="text-field">
       <%= form.text_field :name_gun, onkeydown: "KeyDown('name', 'gun')", onclick: "ClearButtonDisplay('name', 'gun'), PasteCheck('name', 'gun')" %>
+      <!-- クリアボタン -->
       <div id="name-gun-clear" class="clear-button fas fa-times" onclick="InputClear('name', 'gun')">
         <!-- ツールチップ -->
         <div class="form-clear-balloon">フォームクリア</div>
@@ -83,7 +87,11 @@
     <%= form.label :motif %>
     <div class="text-area">
       <%= form.text_area :motif, onkeydown: "KeyDown('motif')", onclick: "ClearButtonDisplay('motif'), PasteCheck('motif')", class: "" %>
-      <div id="motif-clear" class="clear-button fas fa-times" onclick="InputClear('motif')"><div class="form-clear-balloon">フォームクリア</div><!-- ツールチップ --></div>
+      <!-- クリアボタン -->
+      <div id="motif-clear" class="clear-button fas fa-times" onclick="InputClear('motif')">
+        <!-- ツールチップ -->
+        <div class="form-clear-balloon">フォームクリア</div>
+      </div>
     </div>
   </div>
 
@@ -114,6 +122,7 @@
     }
     this.clearTargetId.value="";
     this.clearTargetId.focus(); // クリアボタン押下でフォーカス
+    this.clearTargetId.style.width = "170px"; // クリアボタン押下時に幅を元のサイズに戻す
     targetButton.style.visibility = "hidden"; // 内容クリアでクリアボタンも非表示にする
   }
   // 入力時のみクリアボタン表示
@@ -202,4 +211,19 @@
     })
   });
 // ここまでテキストエリアリサイズ
+
+// ここからテキストフィールド幅リサイズ
+  $(document).ready(function() {
+    var $inputText = $(".js-input-text");
+    var $dummyInputText = $(".js-dummy-input-text");
+
+    function updateValue(e) {
+      var value = $(e.target).val();
+      $(e.target).prev($dummyInputText).text(value);
+    }
+
+    $inputText.on("keyup", updateValue);
+    $inputText.on("compositionend", updateValue);
+  });
+// ここまでテキストフィールド幅リサイズ
 </script>
