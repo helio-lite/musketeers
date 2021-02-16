@@ -161,21 +161,21 @@
 // ここまで検索フォームレイアウト
 
 // ここからテキストフィールド幅リサイズ
-.input-text_dummy {
+.width-resize-dummy {
   display: inline-block;
   overflow: hidden;
   min-width: 170px; //未入力時幅を指定
   white-space: nowrap;
   opacity: 0;
 }
-.input-text_dummy::before {
+.width-resize-dummy::before {
   content: '';
 }
-.input-text_dummy:empty::before {
+.width-resize-dummy:empty::before {
   content: attr(data-placeholder);
 }
 
-.input-text {
+.width-resize {
   position: absolute;
   top: 0;
   left: 0;

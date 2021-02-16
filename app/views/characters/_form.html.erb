@@ -32,8 +32,8 @@
   <div class="field">
     <%= form.label :name_ja %>
     <div class="text-field">
-      <div class="input-text_dummy js-dummy-input-text" data-placeholder="日本語名入力"></div>
-      <%= form.text_field :name_ja, onkeydown: "KeyDown('name', 'ja')", onclick: "ClearButtonDisplay('name', 'ja'), PasteCheck('name', 'ja')", class: "input-text js-input-text", placeholder: "日本語名入力" %>
+      <div class="width-resize-dummy js-dummy-width-resize" data-placeholder="日本語名入力"></div>
+      <%= form.text_field :name_ja, onkeydown: "KeyDown('name', 'ja')", onclick: "ClearButtonDisplay('name', 'ja'), PasteCheck('name', 'ja')", class: "width-resize js-width-resize", placeholder: "日本語名入力" %>
       <!-- クリアボタン -->
       <div id="name-ja-clear" class="clear-button fas fa-times" onclick="InputClear('name', 'ja')">
         <!-- ツールチップ -->
@@ -214,8 +214,8 @@
 
 // ここからテキストフィールド幅リサイズ
   $(document).ready(function() {
-    var $inputText = $(".js-input-text");
-    var $dummyInputText = $(".js-dummy-input-text");
+    var $inputText = $(".js-width-resize");
+    var $dummyInputText = $(".js-dummy-width-resize");
 
     function updateValue(e) {
       var value = $(e.target).val();
