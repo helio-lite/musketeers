@@ -18,7 +18,8 @@ class CharactersController < ApplicationController
   # GET /characters/1.json
   def show
     @gun_category = GunCategory.find(@character.gun_category_id).name
-    @country = Country.find(@character.country_id).name 
+    @gun_type = GunType.find(@character.gun_type_id).name
+    @country = Country.order(:id).find(@character.country_id).name
     @information = @character.information.order(:title_id) #千銃士/千銃士Rの順にする
   end
 

@@ -89,12 +89,12 @@
 
   <div class="field">
     <%= form.label :gun_type_id %>
-    <%= form.number_field :gun_type_id %>
+    <%= form.collection_select(:gun_type_id, GunType.order(:ruby), :id, :name) %>
   </div>
 
   <div class="field">
     <%= form.label :country_id %>
-    <%= form.collection_select(:country_id, Country.all, :id, :name) %>
+    <%= form.collection_select(:country_id, Country.order(:ruby), :id, :name) %>
   </div>
 
   <div class="field">
