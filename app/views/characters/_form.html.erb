@@ -33,7 +33,11 @@
     <%= form.label :name_ja %>
     <div class="text-field">
       <div class="width-resize-dummy js-dummy-width-resize" data-placeholder="日本語名入力"></div>
-      <%= form.text_field :name_ja, onkeydown: "KeyDown('name', 'ja')", onclick: "ClearButtonDisplay('name', 'ja'), PasteCheck('name', 'ja')", class: "width-resize js-width-resize", placeholder: "日本語名入力" %>
+      <%= form.text_field :name_ja,
+                          onkeydown: "KeyDown('name', 'ja')",
+                          onclick: "ClearButtonDisplay('name', 'ja'), PasteCheck('name', 'ja')",
+                          class: "width-resize js-width-resize",
+                          placeholder: "日本語名入力" %>
       <!-- クリアボタン -->
       <div id="name-ja-clear" class="clear-button fas fa-times" onclick="InputClear('name', 'ja')">
         <!-- ツールチップ -->
@@ -46,7 +50,11 @@
     <%= form.label :name_en %>
     <div class="text-field">
       <div class="width-resize-dummy js-dummy-width-resize" data-placeholder="英語名入力"></div>
-      <%= form.text_field :name_en, onkeydown: "KeyDown('name', 'en')", onclick: "ClearButtonDisplay('name', 'en'), PasteCheck('name', 'en')", class: "width-resize js-width-resize", placeholder: "英語名入力" %>
+      <%= form.text_field :name_en,
+                          onkeydown: "KeyDown('name', 'en')",
+                          onclick: "ClearButtonDisplay('name', 'en'), PasteCheck('name', 'en')",
+                          class: "width-resize js-width-resize",
+                          placeholder: "英語名入力" %>
       <!-- クリアボタン -->
       <div id="name-en-clear" class="clear-button fas fa-times" onclick="InputClear('name', 'en')">
         <!-- ツールチップ -->
@@ -59,7 +67,11 @@
     <%= form.label :name_gun %>
     <div class="text-field">
       <div class="width-resize-dummy js-dummy-width-resize" data-placeholder="モチーフ名入力"></div>
-      <%= form.text_field :name_gun, onkeydown: "KeyDown('name', 'gun')", onclick: "ClearButtonDisplay('name', 'gun'), PasteCheck('name', 'gun')", class: "width-resize js-width-resize", placeholder: "モチーフ名入力" %>
+      <%= form.text_field :name_gun,
+                          onkeydown: "KeyDown('name', 'gun')",
+                          onclick: "ClearButtonDisplay('name', 'gun'), PasteCheck('name', 'gun')",
+                          class: "width-resize js-width-resize",
+                          placeholder: "モチーフ名入力" %>
       <!-- クリアボタン -->
       <div id="name-gun-clear" class="clear-button fas fa-times" onclick="InputClear('name', 'gun')">
         <!-- ツールチップ -->
@@ -88,7 +100,10 @@
   <div class="field">
     <%= form.label :motif %>
     <div class="text-area">
-      <%= form.text_area :motif, onkeydown: "KeyDown('motif')", onclick: "ClearButtonDisplay('motif'), PasteCheck('motif')", class: "" %>
+      <%= form.text_area :motif,
+                         onkeydown: "KeyDown('motif')",
+                         onclick: "ClearButtonDisplay('motif'), PasteCheck('motif')",
+                         placeholder: "モチーフ文入力" %>
       <!-- クリアボタン -->
       <div id="motif-clear" class="clear-button fas fa-times" onclick="InputClear('motif')">
         <!-- ツールチップ -->

@@ -20,7 +20,10 @@
   <div class="field">
     <%= form.label :introduction %>
     <div class="text-area">
-      <%= form.text_area :introduction, onkeydown: "KeyDown(#{@info_index}, 'introduction')", onclick: "ClearButtonDisplay(#{@info_index}, 'introduction'), PasteCheck(#{@info_index}, 'introduction')" %>
+      <%= form.text_area :introduction,
+                         onkeydown: "KeyDown(#{@info_index}, 'introduction')",
+                         onclick: "ClearButtonDisplay(#{@info_index}, 'introduction'), PasteCheck(#{@info_index}, 'introduction')",
+                         placeholder: "自己紹介入力" %>
       <!-- クリアボタン -->
       <div id="introduction-<%= @info_index %>-clear" class="clear-button fas fa-times" onclick="InputClear(<%= @info_index %>, 'introduction')">
         <!-- ツールチップ -->
@@ -38,7 +41,11 @@
     <%= form.label :hobby %>
     <div class="text-field">
       <div class="width-resize-dummy js-dummy-width-resize" data-placeholder="趣味入力"></div>
-      <%= form.text_field :hobby, onkeydown: "KeyDown(#{@info_index}, 'hobby')", onclick: "ClearButtonDisplay(#{@info_index}, 'hobby'), PasteCheck(#{@info_index}, 'hobby')", class: "width-resize js-width-resize", placeholder: "趣味入力" %>
+      <%= form.text_field :hobby,
+                          onkeydown: "KeyDown(#{@info_index}, 'hobby')",
+                          onclick: "ClearButtonDisplay(#{@info_index}, 'hobby'), PasteCheck(#{@info_index}, 'hobby')",
+                          class: "width-resize js-width-resize",
+                          placeholder: "趣味入力" %>
       <!-- クリアボタン -->
       <div id="hobby-<%= @info_index %>-clear" class="clear-button fas fa-times" onclick="InputClear(<%= @info_index %>, 'hobby')">
         <!-- ツールチップ -->
@@ -51,7 +58,11 @@
     <%= form.label :favorite %>
     <div class="text-field">
       <div class="width-resize-dummy js-dummy-width-resize" data-placeholder="好きなもの入力"></div>
-      <%= form.text_field :favorite, onkeydown: "KeyDown(#{@info_index}, 'favorite')", onclick: "ClearButtonDisplay(#{@info_index}, 'favorite'), PasteCheck(#{@info_index}, 'favorite')", class: "width-resize js-width-resize", placeholder: "好きなもの入力" %>
+      <%= form.text_field :favorite,
+                          onkeydown: "KeyDown(#{@info_index}, 'favorite')",
+                          onclick: "ClearButtonDisplay(#{@info_index}, 'favorite'), PasteCheck(#{@info_index}, 'favorite')",
+                          class: "width-resize js-width-resize",
+                          placeholder: "好きなもの入力" %>
       <!-- クリアボタン -->
       <div id="favorite-<%= @info_index %>-clear" class="clear-button fas fa-times" onclick="InputClear(<%= @info_index %>, 'favorite')">
         <!-- ツールチップ -->
