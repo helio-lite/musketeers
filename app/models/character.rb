@@ -26,25 +26,25 @@ class Character < ApplicationRecord
   end
 
   # 条件ごとに検索を分岐する
-  def Character.search_result(keyword, category, country)
+  def Character.search_result(keyword, category, gun_type, country)
     if keyword.present?
-      if country.blank? && category.blank?
+      if country.blank? && gun_type.blank? && category.blank?
         Character.
           where("name_ja like ? OR name_en like ? OR name_gun like ?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%")
-      elsif country.present? || category.present?
+      elsif category.present? || gun_type.present? || country.present?
         Character.
-          where("(name_ja like ? OR name_en like ? OR name_gun like ?) AND (gun_category_id = ? OR country_id = ?)", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", category, country)
+          where("(name_ja like ? OR name_en like ? OR name_gun like ?) AND (gun_category_id = ? OR gun_type_id = ? OR country_id = ?)", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", category, gun_type, country)
       else
         Character.
-          where("(name_ja like ? OR name_en like ? OR name_gun like ?) AND (gun_category_id = ? AND country_id = ?)", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", category, country)
+          where("(name_ja like ? OR name_en like ? OR name_gun like ?) AND (gun_category_id = ? AND gun_type_id = ? AND country_id = ?)", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", category, gun_type, country)
       end
     else
-      if country.present? && category.present?
+      if category.present? && gun_type.present? && country.present?
         Character.
-          where("gun_category_id = ? AND country_id = ?", category, country)
-      elsif country.present? || category.present?
+          where("gun_category_id = ? AND gun_type_id = ? AND country_id = ?", category, country)
+      elsif category.present? || gun_type.present? || country.present?
         Character.
-          where("gun_category_id = ? OR country_id = ?", category, country)
+          where("gun_category_id = ? OR gun_type_id = ? OR country_id = ?", category, gun_type, country)
       else
         Character.all
       end

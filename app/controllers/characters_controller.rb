@@ -7,8 +7,9 @@ class CharactersController < ApplicationController
     if params[:commit] == "Search"
       keyword = params[:keyword]
       category = params[:gun_category][:gun_category_id]
+      gun_type = params[:gun_type]
       country = params[:country]
-      @characters = Character.search_result(keyword, category, country).with_attached_images.page(params[:page]).per(5)
+      @characters = Character.search_result(keyword, category, gun_type, country).with_attached_images.page(params[:page]).per(5)
     else
       @characters = Character.all.with_attached_images.page(params[:page]).per(5)
     end
