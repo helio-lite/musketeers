@@ -97,4 +97,11 @@
       target.style.visibility = "visible";
     }
   }
+
+  $(function(){
+    data = <%== Character.select(:name_ja).map{|c| c.name_ja} %>;
+    $("#keyword").autocomplete({
+      source: data
+    });
+  });
 </script>
