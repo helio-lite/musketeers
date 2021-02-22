@@ -98,10 +98,18 @@
     }
   }
 
+  // オートコンプリート
   $(function(){
-    data = <%== Character.select(:name_ja).map{|c| c.name_ja} %>;
+    data = <%== Character.pluck(:name_ja, :name_en, :name_gun).flatten.uniq %>;
     $("#keyword").autocomplete({
-      source: data
+      // 前方一致で候補を表示
+      source: function(request, response) {
+        response(
+          $.grep(data, function(value){
+            return value.indexOf(request.term) === 0;
+          })
+        );
+      }
     });
   });
 </script>
