@@ -31,18 +31,30 @@
   <%= paginate @characters %>
 </div>
 
-<table id="" class="">
+<table>
   <thead>
     <tr>
-      <%# ここからソート用変数 %>
-      <%# gun_category_idはハッシュ形式で変数に格納する %>
+      <!-- ここからソート用変数 -->
+      <!-- gun_category_idはハッシュ形式で変数に格納する -->
       <% @gun_category = params[:gun_category].blank? ? nil : {gun_category_id: params[:gun_category][:gun_category_id] } %>
-      <%# sort_orderに渡す検索対象カラム %>
+      <!-- sort_orderに渡す検索対象カラム -->
       <% @search_theme = {keyword: params[:keyword], gun_category: @gun_category, gun_type: params[:gun_type], country: params[:country]} %>
-      <%# ここまでソート用変数 %>
-      <th><%= sort_order "name_ja", "Name ja", @search_theme %></th>
-      <th><%= sort_order "name_en", "Name en", @search_theme %></th>
-      <th><%= sort_order "name_gun", "Name gun", @search_theme %></th>
+      <!-- ここまでソート用変数 -->
+      <th class="sort-link">
+        <%= sort_order "name_ja", "Name ja", @search_theme %>
+        <!-- ツールチップ -->
+        <div class="sort-link-balloon">日本語名ソート</div>
+      </th>
+      <th class="sort-link">
+        <%= sort_order "name_en", "Name en", @search_theme %>
+        <!-- ツールチップ -->
+        <div class="sort-link-balloon">英語名ソート</div>
+      </th>
+      <th class="sort-link">
+        <%= sort_order "name_gun", "Name gun", @search_theme %>
+        <!-- ツールチップ -->
+        <div class="sort-link-balloon">モチーフ名ソート</div>
+      </th>
       <th></th>
       <th>Gun category</th>
       <th>Gun type</th>
