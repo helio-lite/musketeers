@@ -1,18 +1,16 @@
 class CharactersController < ApplicationController
   before_action :set_character, only: [:show, :edit, :update, :destroy]
+  #ヘルパーにメソッドを引き渡す
+  helper_method :sort_column, :sort_direction
 
   # GET /characters
   # GET /characters.json
   def index
-    if params[:commit] == "Search"
-      keyword = params[:keyword]
-      category = params[:gun_category][:gun_category_id]
-      gun_type = params[:gun_type]
-      country = params[:country]
-      @characters = Character.search_result(keyword, category, gun_type, country).with_attached_images.page(params[:page]).per(5)
-    else
-      @characters = Character.all.with_attached_images.page(params[:page]).per(5)
-    end
+    keyword = params[:keyword].present? ? params[:keyword] : nil
+    category = params[:gun_category].present? ? params[:gun_category][:gun_category_id] : nil
+    gun_type = params[:gun_type].present? ? params[:gun_type] : nil
+    country = params[:country].present? ? params[:country] : nil
+    @characters = Character.search_result(keyword, category, gun_type, country).order(sort_column => sort_direction).with_attached_images.page(params[:page]).per(5)
   end
 
   # GET /characters/1
@@ -120,5 +118,16 @@ class CharactersController < ApplicationController
           :_destroy
         ]
       )
+    end
+
+    #ソート対象カラムメソッド
+    def sort_column
+      #ソート対象カラムのホワイトリスト
+      %w[name_ja name_en name_gun].include?(params[:column]) ? params[:column] : :id
+    end
+
+    #ソートasc/desc判定
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : 'asc'
     end
 end
