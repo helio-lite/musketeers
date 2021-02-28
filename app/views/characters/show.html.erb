@@ -1,29 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<div class="swiper-container">
-  <!-- Additional required wrapper -->
-  <div class="swiper-wrapper">
-    <!-- Slides -->
-    <% @character.images.each do |i| %>
-    <%# @character.visuals.each do |visual| %>
-      <div class="swiper-slide image-layout">
-        <!-- クリックで画像拡大 -->
-        <%= link_to i, "data-lightbox": i do %>
-          <%= image_tag i, class: "image-size" %>
-        <% end %>
-      </div>
+<!-- imagesがblankならスライダー自体表示しない -->
+<% if @character.images.present? %>
+  <div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <% @character.images.each do |i| %>
+        <div class="swiper-slide image-layout">
+          <!-- クリックで画像拡大 -->
+          <%= link_to i, "data-lightbox": i do %>
+            <%= image_tag i, class: "image-size" %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- imagesが2件以上ならボタン表示 -->
+    <% if @character.images.count > 1 %>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
     <% end %>
   </div>
-  <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
-
-  <!-- If we need navigation buttons -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-
-  <!-- If we need scrollbar -->
-  <div class="swiper-scrollbar"></div>
-</div>
+<% end %>
 
 <p>
   <strong>Name ja:</strong>
