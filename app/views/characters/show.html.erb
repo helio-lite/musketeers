@@ -5,6 +5,7 @@
   <div class="swiper-wrapper">
     <!-- Slides -->
     <% @character.images.each do |i| %>
+    <%# @character.visuals.each do |visual| %>
       <div class="swiper-slide image-layout">
         <!-- クリックで画像拡大 -->
         <%= link_to i, "data-lightbox": i do %>

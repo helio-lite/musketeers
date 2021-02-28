@@ -1,8 +1,12 @@
 class Character < ApplicationRecord
   has_many :information, dependent: :destroy
   accepts_nested_attributes_for :information,
+                                 # 削除フラグで削除できるようにする
                                  allow_destroy: true,
+                                 # いずれかが未入力なら登録しない
                                  reject_if: lambda{|attributes| attributes[:introduction].blank? || attributes[:height].blank? || attributes[:hobby].blank? || attributes[:favorite].blank?}
+
+  # Active Storage
   has_many_attached :images
 
   validates :name_ja, :name_en, :name_gun, presence: true #同名でも別銃の場合があるので同名可

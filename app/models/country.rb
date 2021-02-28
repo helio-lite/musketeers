@@ -10,6 +10,7 @@ class Country < ActiveHash::Base
     {id: 7, name: "フランス", ruby: "フランス"},
     {id: 8, name: "ベルギー", ruby: "ベルギー"},
     {id: 9, name: "ロシア", ruby: "ロシア"},
-    {id: 10, name: "フィンランド", ruby: "フィンランド"}
+    {id: 10, name: "フィンランド", ruby: "フィンランド"},
+    {id: 11, name: "オランダ", ruby: "オランダ"}
   ]
 end
