@@ -2,6 +2,7 @@
 
 <h1>Characters</h1>
 
+<!-- ここから検索フィールド -->
 <div class="search-field-wrap">
   <%= form_with url: characters_path, method: :get, local: true do %>
     <div class="text-field">
@@ -26,12 +27,13 @@
     <% end %>
   <% end %>
 </div>
+<!-- ここまで検索フィールド -->
 
 <div>
   <%= paginate @characters %>
 </div>
 
-<table>
+<table class="cell-width-setting"><!-- 列の幅設定 -->
   <thead>
     <tr>
       <!-- ここからソート用変数 -->
@@ -59,8 +61,8 @@
       <th>Gun category</th>
       <th>Gun type</th>
       <th>Country</th>
-      <th>Motif</th>
-      <th colspan="3"></th>
+      <th class="cell-width-motif">Motif</th>
+      <th colspan="3" class="cell-width-icon"></th>
     </tr>
   </thead>
 
@@ -79,9 +81,9 @@
         <td><%= character.gun_type_id %></td>
         <td><%= character.country_id %></td>
         <td><%= character.motif %></td>
-        <td><%= link_to 'Show', character %></td>
-        <td><%= link_to 'Edit', edit_character_path(character) %></td>
-        <td><%= link_to 'Destroy', character, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to character do %><i class="fas fa-info-circle"></i><% end %></td>
+        <td><%= link_to edit_character_path(character) do %><i class="fas fa-edit"></i><% end %></td>
+        <td><%= link_to character, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fas fa-trash-alt"></i><% end %></td>
       </tr>
     <% end %>
   </tbody>

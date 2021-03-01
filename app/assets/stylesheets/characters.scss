@@ -2,6 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// indexのセル幅設定
+.cell-width-setting {
+  width: 100%;
+  th,
+  td {}
+  th {
+    width: 10%;
+    white-space: nowrap;
+  }
+  td {
+    word-break: break-all; // 文章の改行指定
+  }
+  .cell-width-motif {
+    width: 30%;
+  }
+  .cell-width-icon {
+    width: 1%
+  }
+}
+
 // 検索・form テキストフォームに×アイコン表示
 .text-field {
   position: relative; // これ書かないとフォームに×を取り込めない
