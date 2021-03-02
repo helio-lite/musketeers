@@ -25,22 +25,37 @@
 // ここからアイコン用ツールチップ
 .tooltip-icon {
   position: relative;
+  //display: inline-block; // アイコン縦並び
   .tooltip-icon-balloon {
     display: none;
     position: absolute;
     padding: 10px;
     font-size: 10px;
+    text-align: center;
     line-height: 1.0em;
     color: #fff;
     border-radius: 5px;
-    background: #000;
-    width: 50px;
     opacity:0.5; // ツールチップの透明度指定
+  }
+  // 各ツールチップごとに色とサイズを指定
+  .tooltip-design-show {
+    background: #00f;
+    width: 50px;
+    left: -20px;
+  }
+  .tooltip-design-edit {
+    background: #008000;
+    width: 30px;
+    left: -15px;
+  }
+  .tooltip-design-destroy {
+    background: #f00;
+    width: 30px;
+    left: -15px;
   }
   &:hover .tooltip-icon-balloon {
     display: inline-block;
     top: 20px;
-    left: -30px;
   }
 }
 // ここまでアイコン用ツールチップ
@@ -125,6 +140,15 @@
 // ここからソートリンク用ツールチップ
 .sort-link {
   position: relative;
+  // 文字数に合わせて幅リサイズ
+  .sort-link-width-setting {
+    width: 100px;
+    text-align: center;
+    position: relative;
+    top: 0px;
+    right: -20px;
+    //left: 0px;
+  }
   .sort-link-balloon {
     display: none;
     position: absolute;
@@ -134,7 +158,6 @@
     color: #fff;
     border-radius: 5px;
     background: #000;
-    width: 70px;
     opacity:0.5; // ツールチップの透明度指定
   }
   &:hover .sort-link-balloon {

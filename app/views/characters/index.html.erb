@@ -45,24 +45,30 @@
       <th class="sort-link">
         <%= sort_order "name_ja", "Name ja", @search_theme %>
         <!-- ツールチップ -->
-        <div class="sort-link-balloon">日本語名ソート</div>
+        <div class="sort-link-width-setting">
+          <div class="sort-link-balloon">日本語名ソート</div>
+        </div>
       </th>
       <th class="sort-link">
         <%= sort_order "name_en", "Name en", @search_theme %>
         <!-- ツールチップ -->
-        <div class="sort-link-balloon">英語名ソート</div>
+        <div class="sort-link-width-setting">
+          <div class="sort-link-balloon">英語名ソート</div>
+        </div>
       </th>
       <th class="sort-link">
         <%= sort_order "name_gun", "Name gun", @search_theme %>
         <!-- ツールチップ -->
-        <div class="sort-link-balloon">モチーフ名ソート</div>
+        <div class="sort-link-width-setting">
+          <div class="sort-link-balloon">モチーフ名ソート</div>
+        </div>
       </th>
       <th></th>
       <th>Gun category</th>
       <th>Gun type</th>
       <th>Country</th>
       <th class="cell-width-motif">Motif</th>
-      <th colspan="3" class="cell-width-icon"></th>
+      <th colspan="3" class="cell-width-icon">Do</th>
     </tr>
   </thead>
 
@@ -82,16 +88,25 @@
         <td><%= character.country_id %></td>
         <td><%= character.motif %></td>
         <td class="tooltip-icon">
-          <%= link_to character do %><i class="fas fa-info-circle"></i><% end %>
-          <div class="tooltip-icon-balloon">もっと見る</div>
+          <%= link_to character do %>
+            <i class="fas fa-info-circle"></i>
+          <% end %>
+          <!-- ツールチップ -->
+          <div class="tooltip-icon-balloon tooltip-design-show">もっと見る</div>
         </td>
         <td class="tooltip-icon">
-          <%= link_to edit_character_path(character) do %><i class="fas fa-edit"></i><% end %>
-          <div class="tooltip-icon-balloon">編集</div>
+          <%= link_to edit_character_path(character) do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
+          <!-- ツールチップ -->
+          <div class="tooltip-icon-balloon tooltip-design-edit">編集</div>
         </td>
         <td class="tooltip-icon">
-          <%= link_to character, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fas fa-trash-alt"></i><% end %>
-          <div class="tooltip-icon-balloon">削除</div>
+          <%= link_to character, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+          <!-- ツールチップ -->
+          <div class="tooltip-icon-balloon tooltip-design-destroy">削除</div>
         </td>
       </tr>
     <% end %>
