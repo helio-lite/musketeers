@@ -14,6 +14,8 @@
     <%= stylesheet_link_tag "https://use.fontawesome.com/releases/v5.15.2/css/all.css" %>
     <!-- jquery読み込み -->
     <%= stylesheet_link_tag "https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" %>
+    <!-- swiper設置 js -->
+    <%= javascript_include_tag "https://unpkg.com/swiper/swiper-bundle.min.js" %>
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -21,8 +23,6 @@
   <body>
     <%= yield %>
 
-    <!-- swiper設置 js -->
-    <%= javascript_include_tag "https://unpkg.com/swiper/swiper-bundle.min.js" %>
     <!-- ここから画面クリックで拡大js -->
     <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" %>
     <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js" %>
