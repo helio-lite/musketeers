@@ -10,7 +10,13 @@ class CharactersController < ApplicationController
     category = params[:gun_category].present? ? params[:gun_category][:gun_category_id] : nil
     gun_type = params[:gun_type].present? ? params[:gun_type] : nil
     country = params[:country].present? ? params[:country] : nil
-    @characters = Character.search_result(keyword, category, gun_type, country).order(sort_column => sort_direction).with_attached_images.page(params[:page]).per(5)
+    @characters = Character
+                    .keyword(keyword)
+                    .gun_category(category)
+                    .gun_type(gun_type)
+                    .country(country)
+                    .order(sort_column => sort_direction)
+                    .with_attached_images.page(params[:page]).per(5)
   end
 
   # GET /characters/1

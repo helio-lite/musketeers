@@ -29,29 +29,18 @@ class Character < ApplicationRecord
     self.motif.strip!
   end
 
-  # 条件ごとに検索を分岐する
-  def Character.search_result(keyword, category, gun_type, country)
-    if keyword.present?
-      if category.blank? && gun_type.blank? && country.blank?
-        Character.
-          where("name_ja like ? OR name_en like ? OR name_gun like ? OR motif like ?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%")
-      elsif category.present? || gun_type.present? || country.present?
-        Character.
-          where("(name_ja like ? OR name_en like ? OR name_gun like ? OR motif like ?) AND (gun_category_id = ? OR gun_type_id = ? OR country_id = ?)", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", category, gun_type, country)
-      else
-        Character.
-          where("(name_ja like ? OR name_en like ? OR name_gun like ? OR motif like ?) AND (gun_category_id = ? AND gun_type_id = ? AND country_id = ?)", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", category, gun_type, country)
-      end
-    else
-      if category.present? && gun_type.present? && country.present?
-        Character.
-          where("gun_category_id = ? AND gun_type_id = ? AND country_id = ?", category, gun_type, country)
-      elsif category.present? || gun_type.present? || country.present?
-        Character.
-          where("gun_category_id = ? OR gun_type_id = ? OR country_id = ?", category, gun_type, country)
-      else
-        Character.all
-      end
-    end
+  # 条件ごとに検索をscope設定
+  # キーワード検索/ActiveRecord::Relation 維持
+  scope :keyword, ->(keyword) do
+    where(<<-SQL, keyword: "%#{keyword}%")
+      name_ja LIKE :keyword
+      OR name_en LIKE :keyword
+      OR name_gun LIKE :keyword
+      OR motif LIKE :keyword
+      SQL
   end
+
+  scope :gun_category, -> (category){ where(gun_category_id: category) if category.present? }
+  scope :gun_type, -> (gun_type){ where(gun_type_id: gun_type) if gun_type.present? }
+  scope :country, -> (country){ where(country_id: country) if country.present? }
 end
