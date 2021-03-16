@@ -96,7 +96,7 @@
           <div class="tooltip-icon-balloon tooltip-design-show">もっと見る</div>
         </td>
         <td class="tooltip-icon">
-          <%= link_to edit_character_path(character) do %>
+          <%= link_to edit_character_path(character, take_params) do %>
             <i class="fas fa-edit"></i>
           <% end %>
           <!-- ツールチップ -->
@@ -116,7 +116,7 @@
 
 <br>
 
-<%= link_to 'New Character', new_character_path %>
+<%= link_to 'New Character', new_character_path(take_params) %>
 
 <script>
   // onclick 検索フィールドクリアボタン
