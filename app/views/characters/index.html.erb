@@ -88,7 +88,8 @@
         <td><%= character.country_id %></td>
         <td><%= character.motif %></td>
         <td class="tooltip-icon">
-          <%= link_to character do %>
+          <!-- take_paramsメソッドで検索条件保持 -->
+          <%= link_to character_path(character, take_params) do %>
             <i class="fas fa-info-circle"></i>
           <% end %>
           <!-- ツールチップ -->

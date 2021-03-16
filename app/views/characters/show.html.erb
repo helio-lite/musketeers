@@ -99,7 +99,8 @@
 </div>
 
 <%= link_to 'Edit', edit_character_path(@character) %> |
-<%= link_to 'Back', characters_path %>
+<!-- take_paramsメソッドで検索条件保持 -->
+<%= link_to 'Back', characters_path(take_params) %>
 
 <!-- swiper設置 -->
 <script>
