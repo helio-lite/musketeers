@@ -144,7 +144,7 @@
   }
 
   // オートコンプリート
-  window.addEventListener('DOMContentLoaded', function(){
+  window.addEventListener('keydown', function(){
     data = <%== Character.pluck(:name_ja, :name_en, :name_gun).flatten.uniq %>;
     $("#keyword").autocomplete({
       // 前方一致で候補を表示
