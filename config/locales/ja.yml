@@ -1,0 +1,75 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+ja:
+  hello: "こんにちは世界"
+  activerecord:
+    # エラーメッセージ邦訳
+    errors:
+      models:
+        character:
+          attributes:
+            name_ja:
+              blank: "入力して下さい"
+            name_en:
+              blank: "入力して下さい"
+            name_gun:
+              blank: "入力して下さい"
+    # model名邦訳
+    models:
+      character: "キャラクター"
+    # form上カラム名邦訳
+    attributes:
+      character:
+        images: "画像"
+        name_ja: "日本語名"
+        name_en: "英語名"
+        name_gun: "モチーフ名"
+        gun_category_id: "銃の分類"
+        gun_type_id: "銃の種類"
+        country_id: "作られた国"
+        motif: "モチーフとなった銃"
+      information:
+        title_id: "登場作品"
+        introduction: "自己紹介"
+        height: "身長"
+        hobby: "趣味"
+        favorite: "好きなもの"
+  # ページネーション記号指定
+  views:
+    pagination:
+      truncate: "..."
+  # submit名邦訳
+  helpers:
+    submit:
+      create: "登録する"
+      update: "更新する"
+      submit: "保存する"
