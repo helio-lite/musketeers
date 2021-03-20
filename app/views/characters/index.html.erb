@@ -116,7 +116,9 @@
 
 <br>
 
-<%= link_to 'New Character', new_character_path(take_params) %>
+<%= link_to new_character_path(take_params) do %>
+<i class="fas fa-user-plus"></i>
+<% end %>
 
 <script>
   // onclick 検索フィールドクリアボタン
