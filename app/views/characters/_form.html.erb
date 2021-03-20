@@ -34,12 +34,12 @@
   <div class="field">
     <%= form.label :name_ja %>
     <div class="text-field">
-      <div class="width-resize-dummy js-dummy-width-resize" data-placeholder="日本語名入力"></div>
+      <div class="width-resize-dummy js-dummy-width-resize" data-placeholder=<%= t ".name_ja" %>></div>
       <%= form.text_field :name_ja,
                           onkeydown: "KeyDown('name', 'ja')",
                           onclick: "ClearButtonDisplay('name', 'ja'), PasteCheck('name', 'ja')",
                           class: "width-resize js-width-resize",
-                          placeholder: "日本語名入力" %>
+                          placeholder: t(".name_ja") %>
       <!-- クリアボタン -->
       <div id="name-ja-clear" class="clear-button fas fa-times" onclick="InputClear('name', 'ja')">
         <!-- ツールチップ -->

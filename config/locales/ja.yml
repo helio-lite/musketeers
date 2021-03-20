@@ -47,6 +47,15 @@ ja:
       title: "キャラクター情報登録"
     edit:
       title: "キャラクター情報編集"
+    form:
+      name_ja: "日本語名入力"
+      name_en: "英語名入力"
+      name_gun: "モチーフ名入力"
+      motig: "モチーフとなった銃"
+    information_form:
+      introduction: "自己紹介入力"
+      hobby: "趣味入力"
+      favorite: "好きなもの入力"
   activerecord:
     # エラーメッセージ邦訳
     errors:
