@@ -43,21 +43,21 @@
       <% @search_theme = {keyword: params[:keyword], gun_category: @gun_category, gun_type: params[:gun_type], country: params[:country]} %>
       <!-- ここまでソート用変数 -->
       <th class="sort-link">
-        <%= sort_order "name_ja", "Name ja", @search_theme %>
+        <%= sort_order "name_ja", t(".name_ja"), @search_theme %>
         <!-- ツールチップ -->
         <div class="sort-link-width-setting">
           <div class="sort-link-balloon">日本語名ソート</div>
         </div>
       </th>
       <th class="sort-link">
-        <%= sort_order "name_en", "Name en", @search_theme %>
+        <%= sort_order "name_en", t(".name_en"), @search_theme %>
         <!-- ツールチップ -->
         <div class="sort-link-width-setting">
           <div class="sort-link-balloon">英語名ソート</div>
         </div>
       </th>
       <th class="sort-link">
-        <%= sort_order "name_gun", "Name gun", @search_theme %>
+        <%= sort_order "name_gun", t(".name_gun"), @search_theme %>
         <!-- ツールチップ -->
         <div class="sort-link-width-setting">
           <div class="sort-link-balloon">モチーフ名ソート</div>
@@ -67,7 +67,7 @@
       <th>Gun category</th>
       <th>Gun type</th>
       <th>Country</th>
-      <th class="cell-width-motif">Motif</th>
+      <th class="cell-width-motif"><%= t ".motif" %></th>
       <th colspan="3" class="cell-width-icon">Do</th>
     </tr>
   </thead>

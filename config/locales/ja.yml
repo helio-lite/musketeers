@@ -35,6 +35,10 @@ ja:
   characters:
     index:
       title: "キャラクター一覧"
+      name_ja: "日本語名"
+      name_en: "英語名"
+      name_gun: "モチーフ名"
+      motif: "モチーフとなった銃"
       message: "%{name_ja}を削除しますか？"
     new:
       title: "キャラクター情報登録"
