@@ -32,32 +32,32 @@
 <% end %>
 
 <p>
-  <strong>Name ja:</strong>
+  <strong><%= t ".name_ja" %></strong>
   <%= @character.name_ja %>
 </p>
 
 <p>
-  <strong>Name en:</strong>
+  <strong><%= t ".name_en" %></strong>
   <%= @character.name_en %>
 </p>
 
 <p>
-  <strong>Name gun:</strong>
+  <strong><%= t ".name_gun" %></strong>
   <%= @character.name_gun %>
 </p>
 
 <p>
-  <strong>Gun category:</strong>
+  <strong><%= t ".gun_category" %></strong>
   <%= @gun_category %>
 </p>
 
 <p>
-  <strong>Gun type:</strong>
+  <strong><%= t ".gun_type" %></strong>
   <%= @gun_type %>
 </p>
 
 <p>
-  <strong>Country:</strong>
+  <strong><%= t ".country" %></strong>
   <%= @country %>
 </p>
 
@@ -75,22 +75,22 @@
       </label>
       <div class="tab-content">
         <p>
-          <strong>Introduction:</strong>
+          <strong><%= t ".introduction" %></strong>
           <%= simple_format(h(i.introduction)) %>
         </p>
 
         <p>
-          <strong>Height:</strong>
+          <strong><%= t ".height" %></strong>
           <%= i.height %> cm
         </p>
 
         <p>
-          <strong>Hobby:</strong>
+          <strong><%= t ".hobby" %></strong>
           <%= i.hobby %>
         </p>
 
         <p>
-          <strong>Favorite:</strong>
+          <strong><%= t ".favorite" %></strong>
           <%= i.favorite %>
         </p>
       </div>

@@ -56,6 +56,17 @@ ja:
       introduction: "自己紹介入力"
       hobby: "趣味入力"
       favorite: "好きなもの入力"
+    show:
+      name_ja: "日本語名"
+      name_en: "英語名"
+      name_gun: "モチーフ名"
+      gun_category: "分類"
+      gun_type: "銃の種類"
+      country: "作られた国"
+      introduction: "自己紹介"
+      height: "身長"
+      hobby: "趣味"
+      favorite: "好きなもの"
   activerecord:
     # エラーメッセージ邦訳
     errors:
