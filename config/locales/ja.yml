@@ -31,6 +31,14 @@
 
 ja:
   hello: "こんにちは世界"
+  # viewの階層指定
+  characters:
+    index:
+      title: "キャラクター一覧"
+    new:
+      title: "キャラクター情報登録"
+    edit:
+      title: "キャラクター情報編集"
   activerecord:
     # エラーメッセージ邦訳
     errors:
