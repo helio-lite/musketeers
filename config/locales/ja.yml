@@ -43,6 +43,7 @@ ja:
       name_gun: "モチーフ名"
       motif: "モチーフとなった銃"
       message: "%{name_ja}を削除しますか？"
+      search-clear-balloon: "フォームクリア"
     new:
       title: "キャラクター情報登録"
     edit:
@@ -51,7 +52,7 @@ ja:
       name_ja: "日本語名入力"
       name_en: "英語名入力"
       name_gun: "モチーフ名入力"
-      motig: "モチーフとなった銃"
+      motif: "モチーフとなった銃"
     information_form:
       introduction: "自己紹介入力"
       hobby: "趣味入力"
@@ -103,6 +104,16 @@ ja:
   views:
     pagination:
       truncate: "..."
+    form:
+      clear: "フォームクリア"
+    sort:
+      name_ja: "日本語名ソート"
+      name_en: "英語名ソート"
+      name_gun: "モチーフ名ソート"
+    icon:
+      show: "もっと見る"
+      edit: "編集"
+      delete: "削除"
   # submit名邦訳
   helpers:
     submit:

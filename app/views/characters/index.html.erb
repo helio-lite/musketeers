@@ -13,7 +13,7 @@
                          onclick: "KeywordClearDisplay()" %>
       <div id="search-field-clear" class="clear-button fas fa-times" onclick="KeywordClearButton()">
         <!-- ツールチップ -->
-        <div class="search-clear-balloon">フォームクリア</div>
+        <div class="search-clear-balloon"><%= t "views.form.clear" %></div>
       </div>
     </div>
     <div class="radio-buttons">
@@ -46,21 +46,21 @@
         <%= sort_order "name_ja", t(".name_ja"), @search_theme %>
         <!-- ツールチップ -->
         <div class="sort-link-width-setting">
-          <div class="sort-link-balloon">日本語名ソート</div>
+          <div class="sort-link-balloon"><%= t("views.sort.name_ja") %></div>
         </div>
       </th>
       <th class="sort-link">
         <%= sort_order "name_en", t(".name_en"), @search_theme %>
         <!-- ツールチップ -->
         <div class="sort-link-width-setting">
-          <div class="sort-link-balloon">英語名ソート</div>
+          <div class="sort-link-balloon"><%= t("views.sort.name_en") %></div>
         </div>
       </th>
       <th class="sort-link">
         <%= sort_order "name_gun", t(".name_gun"), @search_theme %>
         <!-- ツールチップ -->
         <div class="sort-link-width-setting">
-          <div class="sort-link-balloon">モチーフ名ソート</div>
+          <div class="sort-link-balloon"><%= t("views.sort.name_gun") %></div>
         </div>
       </th>
       <th></th>
@@ -93,21 +93,21 @@
             <i class="fas fa-info-circle"></i>
           <% end %>
           <!-- ツールチップ -->
-          <div class="tooltip-icon-balloon tooltip-design-show">もっと見る</div>
+          <div class="tooltip-icon-balloon tooltip-design-show"><%= t("views.icon.show") %></div>
         </td>
         <td class="tooltip-icon">
           <%= link_to edit_character_path(character, take_params) do %>
             <i class="fas fa-edit"></i>
           <% end %>
           <!-- ツールチップ -->
-          <div class="tooltip-icon-balloon tooltip-design-edit">編集</div>
+          <div class="tooltip-icon-balloon tooltip-design-edit"><%= t("views.icon.edit") %></div>
         </td>
         <td class="tooltip-icon">
           <%= link_to character, method: :delete, data: { confirm: t(".message", name_ja: character.name_ja) } do %>
             <i class="fas fa-trash-alt"></i>
           <% end %>
           <!-- ツールチップ -->
-          <div class="tooltip-icon-balloon tooltip-design-destroy">削除</div>
+          <div class="tooltip-icon-balloon tooltip-design-destroy"><%= t("views.icon.delete") %></div>
         </td>
       </tr>
     <% end %>
