@@ -35,6 +35,7 @@ ja:
   characters:
     index:
       title: "キャラクター一覧"
+      message: "削除しますか？"
     new:
       title: "キャラクター情報登録"
     edit:

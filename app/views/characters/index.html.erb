@@ -103,7 +103,7 @@
           <div class="tooltip-icon-balloon tooltip-design-edit">編集</div>
         </td>
         <td class="tooltip-icon">
-          <%= link_to character, method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <%= link_to character, method: :delete, data: { confirm: t(".message") } do %>
             <i class="fas fa-trash-alt"></i>
           <% end %>
           <!-- ツールチップ -->
