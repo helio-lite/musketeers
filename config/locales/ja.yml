@@ -35,6 +35,9 @@ ja:
   characters:
     index:
       title: "キャラクター一覧"
+      keyword: "キーワード入力"
+      gun_type: "銃の種類を選択"
+      country: "国名を選択"
       name_ja: "日本語名"
       name_en: "英語名"
       name_gun: "モチーフ名"
