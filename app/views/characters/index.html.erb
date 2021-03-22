@@ -121,30 +121,6 @@
 <% end %>
 
 <script>
-  // onclick 検索フィールドクリアボタン
-  function KeywordClearButton(){
-    this.keyword.value="";
-    this.keyword.focus(); // クリアボタン押下でフォーカス
-    target = document.getElementById("search-field-clear");
-    target.style.visibility = "hidden"; // キーワードクリアでクリアボタンも非表示にする
-  }
-
-  // onkeydown 入力時のみクリアボタン表示
-  function SearchFieldKeyDown(){
-    if (this.keyword.value.length > 0){
-      target = document.getElementById("search-field-clear");
-      target.style.visibility = "visible";
-    }
-  }
-
-  // Search後入力フィールドクリックでクリアボタン表示
-  function KeywordClearDisplay(){
-    if (this.keyword.value.length > 0){
-      target = document.getElementById("search-field-clear");
-      target.style.visibility = "visible";
-    }
-  }
-
   // オートコンプリート
   window.addEventListener('keydown', function(){
     data = <%== Character.pluck(:name_ja, :name_en, :name_gun).flatten.uniq %>;
@@ -160,3 +136,4 @@
     });
   });
 </script>
+<%= javascript_include_tag "characters/index" %>
